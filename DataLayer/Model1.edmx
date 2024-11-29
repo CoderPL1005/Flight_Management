@@ -1,0 +1,954 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="FLIGHT_MANAGEMENTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="tb_AIRCRAFT">
+          <Key>
+            <PropertyRef Name="AIRCRAFT_ID" />
+          </Key>
+          <Property Name="AIRCRAFT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MODEL" Type="nvarchar" MaxLength="100" />
+          <Property Name="CAPACITY" Type="int" />
+          <Property Name="MANUFACTURER" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="tb_AIRPORTS">
+          <Key>
+            <PropertyRef Name="AIRPORT_ID" />
+          </Key>
+          <Property Name="AIRPORT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AIPORT_NAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="CITY" Type="nvarchar" MaxLength="100" />
+          <Property Name="COUNTRY" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="tb_BOOKINGS">
+          <Key>
+            <PropertyRef Name="BOOKING_ID" />
+          </Key>
+          <Property Name="BOOKING_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FLIGHT_ID" Type="int" />
+          <Property Name="PASSENGER_ID" Type="int" />
+          <Property Name="BOOKING_DATE" Type="datetime" />
+          <Property Name="SEAT_ID" Type="int" />
+          <Property Name="BOOKING_STATUS" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="tb_CHECKINS">
+          <Key>
+            <PropertyRef Name="CHECKIN_ID" />
+          </Key>
+          <Property Name="CHECKIN_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BOOKING_ID" Type="int" />
+          <Property Name="CHECKIN_TIME" Type="datetime" />
+          <Property Name="BAGGAGE_COUNT" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="SEAT_ID" Type="int" />
+          <Property Name="CHECKIN_STATUS" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="tb_CHUCVU">
+          <Key>
+            <PropertyRef Name="IDCHUCVU" />
+          </Key>
+          <Property Name="IDCHUCVU" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CHUCVU" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="tb_FLIGHTS">
+          <Key>
+            <PropertyRef Name="FLIGHT_ID" />
+          </Key>
+          <Property Name="FLIGHT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AIRLINE" Type="nvarchar" MaxLength="100" />
+          <Property Name="ORIGIN_AIRPORT_ID" Type="int" />
+          <Property Name="DESTINATION_AIRPORT_ID" Type="int" />
+          <Property Name="DEPARTURE_TIME" Type="datetime" />
+          <Property Name="ARRIVAL_TIME" Type="datetime" />
+          <Property Name="AIRCRAFT_ID" Type="int" />
+          <Property Name="FLIGHT_STATUS" Type="nvarchar" MaxLength="100" />
+          <Property Name="GATE" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="tb_FUNC">
+          <Key>
+            <PropertyRef Name="FUNC_CODE" />
+          </Key>
+          <Property Name="FUNC_CODE" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SORT" Type="int" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="200" />
+          <Property Name="IGROUP" Type="bit" />
+          <Property Name="PARENT" Type="nvarchar" MaxLength="50" />
+          <Property Name="MENU" Type="bit" />
+          <Property Name="TIPS" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tb_Member">
+          <Key>
+            <PropertyRef Name="EMAIL" />
+          </Key>
+          <Property Name="USERID" Type="nvarchar" MaxLength="50" />
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="PASSWORD" Type="nvarchar" MaxLength="50" />
+          <Property Name="HOTEN" Type="nvarchar" MaxLength="100" />
+          <Property Name="GIOITINH" Type="nvarchar" MaxLength="10" />
+          <Property Name="NGAYSINH" Type="date" />
+          <Property Name="DIACHI" Type="nvarchar" MaxLength="500" />
+          <Property Name="DIENTHOAI" Type="nvarchar" MaxLength="10" />
+          <Property Name="IMAGE_PART" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_NHANVIEN">
+          <Key>
+            <PropertyRef Name="IDNV" />
+          </Key>
+          <Property Name="IDNV" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="HOTEN" Type="nvarchar" MaxLength="50" />
+          <Property Name="DIENTHOAI" Type="nvarchar" MaxLength="10" />
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="100" />
+          <Property Name="GIOITINH" Type="nvarchar" MaxLength="3" />
+          <Property Name="NGAYSINH" Type="date" />
+          <Property Name="DIACHI" Type="nvarchar" MaxLength="500" />
+          <Property Name="NGAYVAOLAM" Type="date" />
+          <Property Name="IDCHUCVU" Type="nvarchar" MaxLength="50" />
+          <Property Name="DISABLED" Type="bit" />
+        </EntityType>
+        <EntityType Name="tb_PASSENGERS">
+          <Key>
+            <PropertyRef Name="PASSENGER_ID" />
+          </Key>
+          <Property Name="PASSENGER_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FULL_NAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="BIRTHDAY" Type="date" />
+          <Property Name="PASSPORT_NUMBER" Type="nvarchar" MaxLength="20" />
+          <Property Name="NATIONALITY" Type="nvarchar" MaxLength="100" />
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="100" />
+          <Property Name="PHONE_NUMBER" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="tb_PAYMENTS">
+          <Key>
+            <PropertyRef Name="PAYMENT_ID" />
+          </Key>
+          <Property Name="PAYMENT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BOOKING_ID" Type="int" />
+          <Property Name="PAYMENT_DATETIME" Type="datetime" />
+          <Property Name="AMOUNT" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="PAYMENT_METHOD" Type="nvarchar" MaxLength="50" />
+          <Property Name="PAYMENT_STATUS" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="tb_SEATS">
+          <Key>
+            <PropertyRef Name="SEAT_ID" />
+          </Key>
+          <Property Name="SEAT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AIRCRAFT_ID" Type="int" />
+          <Property Name="SEAT_NUMBER" Type="varchar" MaxLength="10" />
+          <Property Name="CLASS" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="tb_TAIKHOANNHANVIEN">
+          <Key>
+            <PropertyRef Name="IDTAIKHOAN" />
+          </Key>
+          <Property Name="IDTAIKHOAN" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IDNV" Type="nvarchar" MaxLength="50" />
+          <Property Name="USERNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="PASSWORD" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK__CHECKINS__BOOKIN__09A971A2">
+          <End Role="tb_BOOKINGS" Type="Self.tb_BOOKINGS" Multiplicity="0..1" />
+          <End Role="tb_CHECKINS" Type="Self.tb_CHECKINS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_BOOKINGS">
+              <PropertyRef Name="BOOKING_ID" />
+            </Principal>
+            <Dependent Role="tb_CHECKINS">
+              <PropertyRef Name="BOOKING_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CHECKINS__SEAT_I__0A9D95DB">
+          <End Role="tb_SEATS" Type="Self.tb_SEATS" Multiplicity="0..1" />
+          <End Role="tb_CHECKINS" Type="Self.tb_CHECKINS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_SEATS">
+              <PropertyRef Name="SEAT_ID" />
+            </Principal>
+            <Dependent Role="tb_CHECKINS">
+              <PropertyRef Name="SEAT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PAYMENTS__BOOKIN__0D7A0286">
+          <End Role="tb_BOOKINGS" Type="Self.tb_BOOKINGS" Multiplicity="0..1" />
+          <End Role="tb_PAYMENTS" Type="Self.tb_PAYMENTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_BOOKINGS">
+              <PropertyRef Name="BOOKING_ID" />
+            </Principal>
+            <Dependent Role="tb_PAYMENTS">
+              <PropertyRef Name="BOOKING_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tb_BOOKIN__FLIGH__04E4BC85">
+          <End Role="tb_FLIGHTS" Type="Self.tb_FLIGHTS" Multiplicity="0..1" />
+          <End Role="tb_BOOKINGS" Type="Self.tb_BOOKINGS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_FLIGHTS">
+              <PropertyRef Name="FLIGHT_ID" />
+            </Principal>
+            <Dependent Role="tb_BOOKINGS">
+              <PropertyRef Name="FLIGHT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tb_BOOKIN__PASSE__05D8E0BE">
+          <End Role="tb_PASSENGERS" Type="Self.tb_PASSENGERS" Multiplicity="0..1" />
+          <End Role="tb_BOOKINGS" Type="Self.tb_BOOKINGS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_PASSENGERS">
+              <PropertyRef Name="PASSENGER_ID" />
+            </Principal>
+            <Dependent Role="tb_BOOKINGS">
+              <PropertyRef Name="PASSENGER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tb_BOOKIN__SEAT___06CD04F7">
+          <End Role="tb_SEATS" Type="Self.tb_SEATS" Multiplicity="0..1" />
+          <End Role="tb_BOOKINGS" Type="Self.tb_BOOKINGS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_SEATS">
+              <PropertyRef Name="SEAT_ID" />
+            </Principal>
+            <Dependent Role="tb_BOOKINGS">
+              <PropertyRef Name="SEAT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tb_FLIGHT__AIRCR__71D1E811">
+          <End Role="tb_AIRCRAFT" Type="Self.tb_AIRCRAFT" Multiplicity="0..1" />
+          <End Role="tb_FLIGHTS" Type="Self.tb_FLIGHTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_AIRCRAFT">
+              <PropertyRef Name="AIRCRAFT_ID" />
+            </Principal>
+            <Dependent Role="tb_FLIGHTS">
+              <PropertyRef Name="AIRCRAFT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tb_FLIGHT__DESTI__70DDC3D8">
+          <End Role="tb_AIRPORTS" Type="Self.tb_AIRPORTS" Multiplicity="0..1" />
+          <End Role="tb_FLIGHTS" Type="Self.tb_FLIGHTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_AIRPORTS">
+              <PropertyRef Name="AIRPORT_ID" />
+            </Principal>
+            <Dependent Role="tb_FLIGHTS">
+              <PropertyRef Name="DESTINATION_AIRPORT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tb_FLIGHT__ORIGI__6FE99F9F">
+          <End Role="tb_AIRPORTS" Type="Self.tb_AIRPORTS" Multiplicity="0..1" />
+          <End Role="tb_FLIGHTS" Type="Self.tb_FLIGHTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_AIRPORTS">
+              <PropertyRef Name="AIRPORT_ID" />
+            </Principal>
+            <Dependent Role="tb_FLIGHTS">
+              <PropertyRef Name="ORIGIN_AIRPORT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tb_NHANVI__IDCHU__44CA3770">
+          <End Role="tb_CHUCVU" Type="Self.tb_CHUCVU" Multiplicity="0..1" />
+          <End Role="tb_NHANVIEN" Type="Self.tb_NHANVIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_CHUCVU">
+              <PropertyRef Name="IDCHUCVU" />
+            </Principal>
+            <Dependent Role="tb_NHANVIEN">
+              <PropertyRef Name="IDCHUCVU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tb_SEATS__AIRCRA__02084FDA">
+          <End Role="tb_AIRCRAFT" Type="Self.tb_AIRCRAFT" Multiplicity="0..1" />
+          <End Role="tb_SEATS" Type="Self.tb_SEATS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_AIRCRAFT">
+              <PropertyRef Name="AIRCRAFT_ID" />
+            </Principal>
+            <Dependent Role="tb_SEATS">
+              <PropertyRef Name="AIRCRAFT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tb_TAIKHOA__IDNV__47A6A41B">
+          <End Role="tb_NHANVIEN" Type="Self.tb_NHANVIEN" Multiplicity="0..1" />
+          <End Role="tb_TAIKHOANNHANVIEN" Type="Self.tb_TAIKHOANNHANVIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NHANVIEN">
+              <PropertyRef Name="IDNV" />
+            </Principal>
+            <Dependent Role="tb_TAIKHOANNHANVIEN">
+              <PropertyRef Name="IDNV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FLIGHT_MANAGEMENTModelStoreContainer">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_AIRCRAFT" EntityType="Self.tb_AIRCRAFT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_AIRPORTS" EntityType="Self.tb_AIRPORTS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_BOOKINGS" EntityType="Self.tb_BOOKINGS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_CHECKINS" EntityType="Self.tb_CHECKINS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_CHUCVU" EntityType="Self.tb_CHUCVU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_FLIGHTS" EntityType="Self.tb_FLIGHTS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_FUNC" EntityType="Self.tb_FUNC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_Member" EntityType="Self.tb_Member" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_NHANVIEN" EntityType="Self.tb_NHANVIEN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_PASSENGERS" EntityType="Self.tb_PASSENGERS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_PAYMENTS" EntityType="Self.tb_PAYMENTS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_SEATS" EntityType="Self.tb_SEATS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_TAIKHOANNHANVIEN" EntityType="Self.tb_TAIKHOANNHANVIEN" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__CHECKINS__BOOKIN__09A971A2" Association="Self.FK__CHECKINS__BOOKIN__09A971A2">
+            <End Role="tb_BOOKINGS" EntitySet="tb_BOOKINGS" />
+            <End Role="tb_CHECKINS" EntitySet="tb_CHECKINS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CHECKINS__SEAT_I__0A9D95DB" Association="Self.FK__CHECKINS__SEAT_I__0A9D95DB">
+            <End Role="tb_SEATS" EntitySet="tb_SEATS" />
+            <End Role="tb_CHECKINS" EntitySet="tb_CHECKINS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PAYMENTS__BOOKIN__0D7A0286" Association="Self.FK__PAYMENTS__BOOKIN__0D7A0286">
+            <End Role="tb_BOOKINGS" EntitySet="tb_BOOKINGS" />
+            <End Role="tb_PAYMENTS" EntitySet="tb_PAYMENTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tb_BOOKIN__FLIGH__04E4BC85" Association="Self.FK__tb_BOOKIN__FLIGH__04E4BC85">
+            <End Role="tb_FLIGHTS" EntitySet="tb_FLIGHTS" />
+            <End Role="tb_BOOKINGS" EntitySet="tb_BOOKINGS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tb_BOOKIN__PASSE__05D8E0BE" Association="Self.FK__tb_BOOKIN__PASSE__05D8E0BE">
+            <End Role="tb_PASSENGERS" EntitySet="tb_PASSENGERS" />
+            <End Role="tb_BOOKINGS" EntitySet="tb_BOOKINGS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tb_BOOKIN__SEAT___06CD04F7" Association="Self.FK__tb_BOOKIN__SEAT___06CD04F7">
+            <End Role="tb_SEATS" EntitySet="tb_SEATS" />
+            <End Role="tb_BOOKINGS" EntitySet="tb_BOOKINGS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tb_FLIGHT__AIRCR__71D1E811" Association="Self.FK__tb_FLIGHT__AIRCR__71D1E811">
+            <End Role="tb_AIRCRAFT" EntitySet="tb_AIRCRAFT" />
+            <End Role="tb_FLIGHTS" EntitySet="tb_FLIGHTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tb_FLIGHT__DESTI__70DDC3D8" Association="Self.FK__tb_FLIGHT__DESTI__70DDC3D8">
+            <End Role="tb_AIRPORTS" EntitySet="tb_AIRPORTS" />
+            <End Role="tb_FLIGHTS" EntitySet="tb_FLIGHTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tb_FLIGHT__ORIGI__6FE99F9F" Association="Self.FK__tb_FLIGHT__ORIGI__6FE99F9F">
+            <End Role="tb_AIRPORTS" EntitySet="tb_AIRPORTS" />
+            <End Role="tb_FLIGHTS" EntitySet="tb_FLIGHTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tb_NHANVI__IDCHU__44CA3770" Association="Self.FK__tb_NHANVI__IDCHU__44CA3770">
+            <End Role="tb_CHUCVU" EntitySet="tb_CHUCVU" />
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tb_SEATS__AIRCRA__02084FDA" Association="Self.FK__tb_SEATS__AIRCRA__02084FDA">
+            <End Role="tb_AIRCRAFT" EntitySet="tb_AIRCRAFT" />
+            <End Role="tb_SEATS" EntitySet="tb_SEATS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tb_TAIKHOA__IDNV__47A6A41B" Association="Self.FK__tb_TAIKHOA__IDNV__47A6A41B">
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+            <End Role="tb_TAIKHOANNHANVIEN" EntitySet="tb_TAIKHOANNHANVIEN" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FLIGHT_MANAGEMENTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="sysdiagrams" EntityType="FLIGHT_MANAGEMENTModel.sysdiagram" />
+          <EntitySet Name="tb_AIRCRAFT" EntityType="FLIGHT_MANAGEMENTModel.tb_AIRCRAFT" />
+          <EntitySet Name="tb_AIRPORTS" EntityType="FLIGHT_MANAGEMENTModel.tb_AIRPORTS" />
+          <EntitySet Name="tb_BOOKINGS" EntityType="FLIGHT_MANAGEMENTModel.tb_BOOKINGS" />
+          <EntitySet Name="tb_CHECKINS" EntityType="FLIGHT_MANAGEMENTModel.tb_CHECKINS" />
+          <EntitySet Name="tb_CHUCVU" EntityType="FLIGHT_MANAGEMENTModel.tb_CHUCVU" />
+          <EntitySet Name="tb_FLIGHTS" EntityType="FLIGHT_MANAGEMENTModel.tb_FLIGHTS" />
+          <EntitySet Name="tb_FUNC" EntityType="FLIGHT_MANAGEMENTModel.tb_FUNC" />
+          <EntitySet Name="tb_Member" EntityType="FLIGHT_MANAGEMENTModel.tb_Member" />
+          <EntitySet Name="tb_NHANVIEN" EntityType="FLIGHT_MANAGEMENTModel.tb_NHANVIEN" />
+          <EntitySet Name="tb_PASSENGERS" EntityType="FLIGHT_MANAGEMENTModel.tb_PASSENGERS" />
+          <EntitySet Name="tb_PAYMENTS" EntityType="FLIGHT_MANAGEMENTModel.tb_PAYMENTS" />
+          <EntitySet Name="tb_SEATS" EntityType="FLIGHT_MANAGEMENTModel.tb_SEATS" />
+          <EntitySet Name="tb_TAIKHOANNHANVIEN" EntityType="FLIGHT_MANAGEMENTModel.tb_TAIKHOANNHANVIEN" />
+          <AssociationSet Name="FK__tb_FLIGHT__AIRCR__71D1E811" Association="FLIGHT_MANAGEMENTModel.FK__tb_FLIGHT__AIRCR__71D1E811">
+            <End Role="tb_AIRCRAFT" EntitySet="tb_AIRCRAFT" />
+            <End Role="tb_FLIGHTS" EntitySet="tb_FLIGHTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tb_SEATS__AIRCRA__02084FDA" Association="FLIGHT_MANAGEMENTModel.FK__tb_SEATS__AIRCRA__02084FDA">
+            <End Role="tb_AIRCRAFT" EntitySet="tb_AIRCRAFT" />
+            <End Role="tb_SEATS" EntitySet="tb_SEATS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tb_FLIGHT__DESTI__70DDC3D8" Association="FLIGHT_MANAGEMENTModel.FK__tb_FLIGHT__DESTI__70DDC3D8">
+            <End Role="tb_AIRPORTS" EntitySet="tb_AIRPORTS" />
+            <End Role="tb_FLIGHTS" EntitySet="tb_FLIGHTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tb_FLIGHT__ORIGI__6FE99F9F" Association="FLIGHT_MANAGEMENTModel.FK__tb_FLIGHT__ORIGI__6FE99F9F">
+            <End Role="tb_AIRPORTS" EntitySet="tb_AIRPORTS" />
+            <End Role="tb_FLIGHTS" EntitySet="tb_FLIGHTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CHECKINS__BOOKIN__09A971A2" Association="FLIGHT_MANAGEMENTModel.FK__CHECKINS__BOOKIN__09A971A2">
+            <End Role="tb_BOOKINGS" EntitySet="tb_BOOKINGS" />
+            <End Role="tb_CHECKINS" EntitySet="tb_CHECKINS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PAYMENTS__BOOKIN__0D7A0286" Association="FLIGHT_MANAGEMENTModel.FK__PAYMENTS__BOOKIN__0D7A0286">
+            <End Role="tb_BOOKINGS" EntitySet="tb_BOOKINGS" />
+            <End Role="tb_PAYMENTS" EntitySet="tb_PAYMENTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tb_BOOKIN__FLIGH__04E4BC85" Association="FLIGHT_MANAGEMENTModel.FK__tb_BOOKIN__FLIGH__04E4BC85">
+            <End Role="tb_FLIGHTS" EntitySet="tb_FLIGHTS" />
+            <End Role="tb_BOOKINGS" EntitySet="tb_BOOKINGS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tb_BOOKIN__PASSE__05D8E0BE" Association="FLIGHT_MANAGEMENTModel.FK__tb_BOOKIN__PASSE__05D8E0BE">
+            <End Role="tb_PASSENGERS" EntitySet="tb_PASSENGERS" />
+            <End Role="tb_BOOKINGS" EntitySet="tb_BOOKINGS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tb_BOOKIN__SEAT___06CD04F7" Association="FLIGHT_MANAGEMENTModel.FK__tb_BOOKIN__SEAT___06CD04F7">
+            <End Role="tb_SEATS" EntitySet="tb_SEATS" />
+            <End Role="tb_BOOKINGS" EntitySet="tb_BOOKINGS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CHECKINS__SEAT_I__0A9D95DB" Association="FLIGHT_MANAGEMENTModel.FK__CHECKINS__SEAT_I__0A9D95DB">
+            <End Role="tb_SEATS" EntitySet="tb_SEATS" />
+            <End Role="tb_CHECKINS" EntitySet="tb_CHECKINS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tb_NHANVI__IDCHU__44CA3770" Association="FLIGHT_MANAGEMENTModel.FK__tb_NHANVI__IDCHU__44CA3770">
+            <End Role="tb_CHUCVU" EntitySet="tb_CHUCVU" />
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tb_TAIKHOA__IDNV__47A6A41B" Association="FLIGHT_MANAGEMENTModel.FK__tb_TAIKHOA__IDNV__47A6A41B">
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+            <End Role="tb_TAIKHOANNHANVIEN" EntitySet="tb_TAIKHOANNHANVIEN" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tb_AIRCRAFT">
+          <Key>
+            <PropertyRef Name="AIRCRAFT_ID" />
+          </Key>
+          <Property Name="AIRCRAFT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MODEL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CAPACITY" Type="Int32" />
+          <Property Name="MANUFACTURER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tb_FLIGHTS" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_FLIGHT__AIRCR__71D1E811" FromRole="tb_AIRCRAFT" ToRole="tb_FLIGHTS" />
+          <NavigationProperty Name="tb_SEATS" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_SEATS__AIRCRA__02084FDA" FromRole="tb_AIRCRAFT" ToRole="tb_SEATS" />
+        </EntityType>
+        <EntityType Name="tb_AIRPORTS">
+          <Key>
+            <PropertyRef Name="AIRPORT_ID" />
+          </Key>
+          <Property Name="AIRPORT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AIPORT_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CITY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="COUNTRY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tb_FLIGHTS" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_FLIGHT__DESTI__70DDC3D8" FromRole="tb_AIRPORTS" ToRole="tb_FLIGHTS" />
+          <NavigationProperty Name="tb_FLIGHTS1" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_FLIGHT__ORIGI__6FE99F9F" FromRole="tb_AIRPORTS" ToRole="tb_FLIGHTS" />
+        </EntityType>
+        <EntityType Name="tb_BOOKINGS">
+          <Key>
+            <PropertyRef Name="BOOKING_ID" />
+          </Key>
+          <Property Name="BOOKING_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FLIGHT_ID" Type="Int32" />
+          <Property Name="PASSENGER_ID" Type="Int32" />
+          <Property Name="BOOKING_DATE" Type="DateTime" Precision="3" />
+          <Property Name="SEAT_ID" Type="Int32" />
+          <Property Name="BOOKING_STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tb_CHECKINS" Relationship="FLIGHT_MANAGEMENTModel.FK__CHECKINS__BOOKIN__09A971A2" FromRole="tb_BOOKINGS" ToRole="tb_CHECKINS" />
+          <NavigationProperty Name="tb_PAYMENTS" Relationship="FLIGHT_MANAGEMENTModel.FK__PAYMENTS__BOOKIN__0D7A0286" FromRole="tb_BOOKINGS" ToRole="tb_PAYMENTS" />
+          <NavigationProperty Name="tb_FLIGHTS" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_BOOKIN__FLIGH__04E4BC85" FromRole="tb_BOOKINGS" ToRole="tb_FLIGHTS" />
+          <NavigationProperty Name="tb_PASSENGERS" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_BOOKIN__PASSE__05D8E0BE" FromRole="tb_BOOKINGS" ToRole="tb_PASSENGERS" />
+          <NavigationProperty Name="tb_SEATS" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_BOOKIN__SEAT___06CD04F7" FromRole="tb_BOOKINGS" ToRole="tb_SEATS" />
+        </EntityType>
+        <EntityType Name="tb_CHECKINS">
+          <Key>
+            <PropertyRef Name="CHECKIN_ID" />
+          </Key>
+          <Property Name="CHECKIN_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BOOKING_ID" Type="Int32" />
+          <Property Name="CHECKIN_TIME" Type="DateTime" Precision="3" />
+          <Property Name="BAGGAGE_COUNT" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="SEAT_ID" Type="Int32" />
+          <Property Name="CHECKIN_STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tb_BOOKINGS" Relationship="FLIGHT_MANAGEMENTModel.FK__CHECKINS__BOOKIN__09A971A2" FromRole="tb_CHECKINS" ToRole="tb_BOOKINGS" />
+          <NavigationProperty Name="tb_SEATS" Relationship="FLIGHT_MANAGEMENTModel.FK__CHECKINS__SEAT_I__0A9D95DB" FromRole="tb_CHECKINS" ToRole="tb_SEATS" />
+        </EntityType>
+        <EntityType Name="tb_CHUCVU">
+          <Key>
+            <PropertyRef Name="IDCHUCVU" />
+          </Key>
+          <Property Name="IDCHUCVU" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CHUCVU" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tb_NHANVIEN" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_NHANVI__IDCHU__44CA3770" FromRole="tb_CHUCVU" ToRole="tb_NHANVIEN" />
+        </EntityType>
+        <EntityType Name="tb_FLIGHTS">
+          <Key>
+            <PropertyRef Name="FLIGHT_ID" />
+          </Key>
+          <Property Name="FLIGHT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AIRLINE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ORIGIN_AIRPORT_ID" Type="Int32" />
+          <Property Name="DESTINATION_AIRPORT_ID" Type="Int32" />
+          <Property Name="DEPARTURE_TIME" Type="DateTime" Precision="3" />
+          <Property Name="ARRIVAL_TIME" Type="DateTime" Precision="3" />
+          <Property Name="AIRCRAFT_ID" Type="Int32" />
+          <Property Name="FLIGHT_STATUS" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="GATE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tb_AIRCRAFT" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_FLIGHT__AIRCR__71D1E811" FromRole="tb_FLIGHTS" ToRole="tb_AIRCRAFT" />
+          <NavigationProperty Name="tb_AIRPORTS" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_FLIGHT__DESTI__70DDC3D8" FromRole="tb_FLIGHTS" ToRole="tb_AIRPORTS" />
+          <NavigationProperty Name="tb_AIRPORTS1" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_FLIGHT__ORIGI__6FE99F9F" FromRole="tb_FLIGHTS" ToRole="tb_AIRPORTS" />
+          <NavigationProperty Name="tb_BOOKINGS" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_BOOKIN__FLIGH__04E4BC85" FromRole="tb_FLIGHTS" ToRole="tb_BOOKINGS" />
+        </EntityType>
+        <EntityType Name="tb_FUNC">
+          <Key>
+            <PropertyRef Name="FUNC_CODE" />
+          </Key>
+          <Property Name="FUNC_CODE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SORT" Type="Int32" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="IGROUP" Type="Boolean" />
+          <Property Name="PARENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MENU" Type="Boolean" />
+          <Property Name="TIPS" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tb_Member">
+          <Key>
+            <PropertyRef Name="EMAIL" />
+          </Key>
+          <Property Name="USERID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HOTEN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="GIOITINH" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="NGAYSINH" Type="DateTime" Precision="0" />
+          <Property Name="DIACHI" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DIENTHOAI" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="IMAGE_PART" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tb_NHANVIEN">
+          <Key>
+            <PropertyRef Name="IDNV" />
+          </Key>
+          <Property Name="IDNV" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HOTEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DIENTHOAI" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="GIOITINH" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="NGAYSINH" Type="DateTime" Precision="0" />
+          <Property Name="DIACHI" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="NGAYVAOLAM" Type="DateTime" Precision="0" />
+          <Property Name="IDCHUCVU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DISABLED" Type="Boolean" />
+          <NavigationProperty Name="tb_CHUCVU" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_NHANVI__IDCHU__44CA3770" FromRole="tb_NHANVIEN" ToRole="tb_CHUCVU" />
+          <NavigationProperty Name="tb_TAIKHOANNHANVIEN" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_TAIKHOA__IDNV__47A6A41B" FromRole="tb_NHANVIEN" ToRole="tb_TAIKHOANNHANVIEN" />
+        </EntityType>
+        <EntityType Name="tb_PASSENGERS">
+          <Key>
+            <PropertyRef Name="PASSENGER_ID" />
+          </Key>
+          <Property Name="PASSENGER_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FULL_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BIRTHDAY" Type="DateTime" Precision="0" />
+          <Property Name="PASSPORT_NUMBER" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="NATIONALITY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PHONE_NUMBER" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tb_BOOKINGS" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_BOOKIN__PASSE__05D8E0BE" FromRole="tb_PASSENGERS" ToRole="tb_BOOKINGS" />
+        </EntityType>
+        <EntityType Name="tb_PAYMENTS">
+          <Key>
+            <PropertyRef Name="PAYMENT_ID" />
+          </Key>
+          <Property Name="PAYMENT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BOOKING_ID" Type="Int32" />
+          <Property Name="PAYMENT_DATETIME" Type="DateTime" Precision="3" />
+          <Property Name="AMOUNT" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="PAYMENT_METHOD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PAYMENT_STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tb_BOOKINGS" Relationship="FLIGHT_MANAGEMENTModel.FK__PAYMENTS__BOOKIN__0D7A0286" FromRole="tb_PAYMENTS" ToRole="tb_BOOKINGS" />
+        </EntityType>
+        <EntityType Name="tb_SEATS">
+          <Key>
+            <PropertyRef Name="SEAT_ID" />
+          </Key>
+          <Property Name="SEAT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AIRCRAFT_ID" Type="Int32" />
+          <Property Name="SEAT_NUMBER" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CLASS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tb_AIRCRAFT" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_SEATS__AIRCRA__02084FDA" FromRole="tb_SEATS" ToRole="tb_AIRCRAFT" />
+          <NavigationProperty Name="tb_BOOKINGS" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_BOOKIN__SEAT___06CD04F7" FromRole="tb_SEATS" ToRole="tb_BOOKINGS" />
+          <NavigationProperty Name="tb_CHECKINS" Relationship="FLIGHT_MANAGEMENTModel.FK__CHECKINS__SEAT_I__0A9D95DB" FromRole="tb_SEATS" ToRole="tb_CHECKINS" />
+        </EntityType>
+        <EntityType Name="tb_TAIKHOANNHANVIEN">
+          <Key>
+            <PropertyRef Name="IDTAIKHOAN" />
+          </Key>
+          <Property Name="IDTAIKHOAN" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IDNV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tb_NHANVIEN" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_TAIKHOA__IDNV__47A6A41B" FromRole="tb_TAIKHOANNHANVIEN" ToRole="tb_NHANVIEN" />
+        </EntityType>
+        <Association Name="FK__tb_FLIGHT__AIRCR__71D1E811">
+          <End Type="FLIGHT_MANAGEMENTModel.tb_AIRCRAFT" Role="tb_AIRCRAFT" Multiplicity="0..1" />
+          <End Type="FLIGHT_MANAGEMENTModel.tb_FLIGHTS" Role="tb_FLIGHTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_AIRCRAFT">
+              <PropertyRef Name="AIRCRAFT_ID" />
+            </Principal>
+            <Dependent Role="tb_FLIGHTS">
+              <PropertyRef Name="AIRCRAFT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tb_SEATS__AIRCRA__02084FDA">
+          <End Type="FLIGHT_MANAGEMENTModel.tb_AIRCRAFT" Role="tb_AIRCRAFT" Multiplicity="0..1" />
+          <End Type="FLIGHT_MANAGEMENTModel.tb_SEATS" Role="tb_SEATS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_AIRCRAFT">
+              <PropertyRef Name="AIRCRAFT_ID" />
+            </Principal>
+            <Dependent Role="tb_SEATS">
+              <PropertyRef Name="AIRCRAFT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tb_FLIGHT__DESTI__70DDC3D8">
+          <End Type="FLIGHT_MANAGEMENTModel.tb_AIRPORTS" Role="tb_AIRPORTS" Multiplicity="0..1" />
+          <End Type="FLIGHT_MANAGEMENTModel.tb_FLIGHTS" Role="tb_FLIGHTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_AIRPORTS">
+              <PropertyRef Name="AIRPORT_ID" />
+            </Principal>
+            <Dependent Role="tb_FLIGHTS">
+              <PropertyRef Name="DESTINATION_AIRPORT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tb_FLIGHT__ORIGI__6FE99F9F">
+          <End Type="FLIGHT_MANAGEMENTModel.tb_AIRPORTS" Role="tb_AIRPORTS" Multiplicity="0..1" />
+          <End Type="FLIGHT_MANAGEMENTModel.tb_FLIGHTS" Role="tb_FLIGHTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_AIRPORTS">
+              <PropertyRef Name="AIRPORT_ID" />
+            </Principal>
+            <Dependent Role="tb_FLIGHTS">
+              <PropertyRef Name="ORIGIN_AIRPORT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CHECKINS__BOOKIN__09A971A2">
+          <End Type="FLIGHT_MANAGEMENTModel.tb_BOOKINGS" Role="tb_BOOKINGS" Multiplicity="0..1" />
+          <End Type="FLIGHT_MANAGEMENTModel.tb_CHECKINS" Role="tb_CHECKINS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_BOOKINGS">
+              <PropertyRef Name="BOOKING_ID" />
+            </Principal>
+            <Dependent Role="tb_CHECKINS">
+              <PropertyRef Name="BOOKING_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PAYMENTS__BOOKIN__0D7A0286">
+          <End Type="FLIGHT_MANAGEMENTModel.tb_BOOKINGS" Role="tb_BOOKINGS" Multiplicity="0..1" />
+          <End Type="FLIGHT_MANAGEMENTModel.tb_PAYMENTS" Role="tb_PAYMENTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_BOOKINGS">
+              <PropertyRef Name="BOOKING_ID" />
+            </Principal>
+            <Dependent Role="tb_PAYMENTS">
+              <PropertyRef Name="BOOKING_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tb_BOOKIN__FLIGH__04E4BC85">
+          <End Type="FLIGHT_MANAGEMENTModel.tb_FLIGHTS" Role="tb_FLIGHTS" Multiplicity="0..1" />
+          <End Type="FLIGHT_MANAGEMENTModel.tb_BOOKINGS" Role="tb_BOOKINGS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_FLIGHTS">
+              <PropertyRef Name="FLIGHT_ID" />
+            </Principal>
+            <Dependent Role="tb_BOOKINGS">
+              <PropertyRef Name="FLIGHT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tb_BOOKIN__PASSE__05D8E0BE">
+          <End Type="FLIGHT_MANAGEMENTModel.tb_PASSENGERS" Role="tb_PASSENGERS" Multiplicity="0..1" />
+          <End Type="FLIGHT_MANAGEMENTModel.tb_BOOKINGS" Role="tb_BOOKINGS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_PASSENGERS">
+              <PropertyRef Name="PASSENGER_ID" />
+            </Principal>
+            <Dependent Role="tb_BOOKINGS">
+              <PropertyRef Name="PASSENGER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tb_BOOKIN__SEAT___06CD04F7">
+          <End Type="FLIGHT_MANAGEMENTModel.tb_SEATS" Role="tb_SEATS" Multiplicity="0..1" />
+          <End Type="FLIGHT_MANAGEMENTModel.tb_BOOKINGS" Role="tb_BOOKINGS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_SEATS">
+              <PropertyRef Name="SEAT_ID" />
+            </Principal>
+            <Dependent Role="tb_BOOKINGS">
+              <PropertyRef Name="SEAT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CHECKINS__SEAT_I__0A9D95DB">
+          <End Type="FLIGHT_MANAGEMENTModel.tb_SEATS" Role="tb_SEATS" Multiplicity="0..1" />
+          <End Type="FLIGHT_MANAGEMENTModel.tb_CHECKINS" Role="tb_CHECKINS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_SEATS">
+              <PropertyRef Name="SEAT_ID" />
+            </Principal>
+            <Dependent Role="tb_CHECKINS">
+              <PropertyRef Name="SEAT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tb_NHANVI__IDCHU__44CA3770">
+          <End Type="FLIGHT_MANAGEMENTModel.tb_CHUCVU" Role="tb_CHUCVU" Multiplicity="0..1" />
+          <End Type="FLIGHT_MANAGEMENTModel.tb_NHANVIEN" Role="tb_NHANVIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_CHUCVU">
+              <PropertyRef Name="IDCHUCVU" />
+            </Principal>
+            <Dependent Role="tb_NHANVIEN">
+              <PropertyRef Name="IDCHUCVU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tb_TAIKHOA__IDNV__47A6A41B">
+          <End Type="FLIGHT_MANAGEMENTModel.tb_NHANVIEN" Role="tb_NHANVIEN" Multiplicity="0..1" />
+          <End Type="FLIGHT_MANAGEMENTModel.tb_TAIKHOANNHANVIEN" Role="tb_TAIKHOANNHANVIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NHANVIEN">
+              <PropertyRef Name="IDNV" />
+            </Principal>
+            <Dependent Role="tb_TAIKHOANNHANVIEN">
+              <PropertyRef Name="IDNV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FLIGHT_MANAGEMENTModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="FLIGHT_MANAGEMENTModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_AIRCRAFT">
+            <EntityTypeMapping TypeName="FLIGHT_MANAGEMENTModel.tb_AIRCRAFT">
+              <MappingFragment StoreEntitySet="tb_AIRCRAFT">
+                <ScalarProperty Name="MANUFACTURER" ColumnName="MANUFACTURER" />
+                <ScalarProperty Name="CAPACITY" ColumnName="CAPACITY" />
+                <ScalarProperty Name="MODEL" ColumnName="MODEL" />
+                <ScalarProperty Name="AIRCRAFT_ID" ColumnName="AIRCRAFT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_AIRPORTS">
+            <EntityTypeMapping TypeName="FLIGHT_MANAGEMENTModel.tb_AIRPORTS">
+              <MappingFragment StoreEntitySet="tb_AIRPORTS">
+                <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+                <ScalarProperty Name="CITY" ColumnName="CITY" />
+                <ScalarProperty Name="AIPORT_NAME" ColumnName="AIPORT_NAME" />
+                <ScalarProperty Name="AIRPORT_ID" ColumnName="AIRPORT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_BOOKINGS">
+            <EntityTypeMapping TypeName="FLIGHT_MANAGEMENTModel.tb_BOOKINGS">
+              <MappingFragment StoreEntitySet="tb_BOOKINGS">
+                <ScalarProperty Name="BOOKING_STATUS" ColumnName="BOOKING_STATUS" />
+                <ScalarProperty Name="SEAT_ID" ColumnName="SEAT_ID" />
+                <ScalarProperty Name="BOOKING_DATE" ColumnName="BOOKING_DATE" />
+                <ScalarProperty Name="PASSENGER_ID" ColumnName="PASSENGER_ID" />
+                <ScalarProperty Name="FLIGHT_ID" ColumnName="FLIGHT_ID" />
+                <ScalarProperty Name="BOOKING_ID" ColumnName="BOOKING_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_CHECKINS">
+            <EntityTypeMapping TypeName="FLIGHT_MANAGEMENTModel.tb_CHECKINS">
+              <MappingFragment StoreEntitySet="tb_CHECKINS">
+                <ScalarProperty Name="CHECKIN_STATUS" ColumnName="CHECKIN_STATUS" />
+                <ScalarProperty Name="SEAT_ID" ColumnName="SEAT_ID" />
+                <ScalarProperty Name="BAGGAGE_COUNT" ColumnName="BAGGAGE_COUNT" />
+                <ScalarProperty Name="CHECKIN_TIME" ColumnName="CHECKIN_TIME" />
+                <ScalarProperty Name="BOOKING_ID" ColumnName="BOOKING_ID" />
+                <ScalarProperty Name="CHECKIN_ID" ColumnName="CHECKIN_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_CHUCVU">
+            <EntityTypeMapping TypeName="FLIGHT_MANAGEMENTModel.tb_CHUCVU">
+              <MappingFragment StoreEntitySet="tb_CHUCVU">
+                <ScalarProperty Name="CHUCVU" ColumnName="CHUCVU" />
+                <ScalarProperty Name="IDCHUCVU" ColumnName="IDCHUCVU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_FLIGHTS">
+            <EntityTypeMapping TypeName="FLIGHT_MANAGEMENTModel.tb_FLIGHTS">
+              <MappingFragment StoreEntitySet="tb_FLIGHTS">
+                <ScalarProperty Name="GATE" ColumnName="GATE" />
+                <ScalarProperty Name="FLIGHT_STATUS" ColumnName="FLIGHT_STATUS" />
+                <ScalarProperty Name="AIRCRAFT_ID" ColumnName="AIRCRAFT_ID" />
+                <ScalarProperty Name="ARRIVAL_TIME" ColumnName="ARRIVAL_TIME" />
+                <ScalarProperty Name="DEPARTURE_TIME" ColumnName="DEPARTURE_TIME" />
+                <ScalarProperty Name="DESTINATION_AIRPORT_ID" ColumnName="DESTINATION_AIRPORT_ID" />
+                <ScalarProperty Name="ORIGIN_AIRPORT_ID" ColumnName="ORIGIN_AIRPORT_ID" />
+                <ScalarProperty Name="AIRLINE" ColumnName="AIRLINE" />
+                <ScalarProperty Name="FLIGHT_ID" ColumnName="FLIGHT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_FUNC">
+            <EntityTypeMapping TypeName="FLIGHT_MANAGEMENTModel.tb_FUNC">
+              <MappingFragment StoreEntitySet="tb_FUNC">
+                <ScalarProperty Name="TIPS" ColumnName="TIPS" />
+                <ScalarProperty Name="MENU" ColumnName="MENU" />
+                <ScalarProperty Name="PARENT" ColumnName="PARENT" />
+                <ScalarProperty Name="IGROUP" ColumnName="IGROUP" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="SORT" ColumnName="SORT" />
+                <ScalarProperty Name="FUNC_CODE" ColumnName="FUNC_CODE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Member">
+            <EntityTypeMapping TypeName="FLIGHT_MANAGEMENTModel.tb_Member">
+              <MappingFragment StoreEntitySet="tb_Member">
+                <ScalarProperty Name="IMAGE_PART" ColumnName="IMAGE_PART" />
+                <ScalarProperty Name="DIENTHOAI" ColumnName="DIENTHOAI" />
+                <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+                <ScalarProperty Name="NGAYSINH" ColumnName="NGAYSINH" />
+                <ScalarProperty Name="GIOITINH" ColumnName="GIOITINH" />
+                <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_NHANVIEN">
+            <EntityTypeMapping TypeName="FLIGHT_MANAGEMENTModel.tb_NHANVIEN">
+              <MappingFragment StoreEntitySet="tb_NHANVIEN">
+                <ScalarProperty Name="DISABLED" ColumnName="DISABLED" />
+                <ScalarProperty Name="IDCHUCVU" ColumnName="IDCHUCVU" />
+                <ScalarProperty Name="NGAYVAOLAM" ColumnName="NGAYVAOLAM" />
+                <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+                <ScalarProperty Name="NGAYSINH" ColumnName="NGAYSINH" />
+                <ScalarProperty Name="GIOITINH" ColumnName="GIOITINH" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="DIENTHOAI" ColumnName="DIENTHOAI" />
+                <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
+                <ScalarProperty Name="IDNV" ColumnName="IDNV" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_PASSENGERS">
+            <EntityTypeMapping TypeName="FLIGHT_MANAGEMENTModel.tb_PASSENGERS">
+              <MappingFragment StoreEntitySet="tb_PASSENGERS">
+                <ScalarProperty Name="PHONE_NUMBER" ColumnName="PHONE_NUMBER" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="NATIONALITY" ColumnName="NATIONALITY" />
+                <ScalarProperty Name="PASSPORT_NUMBER" ColumnName="PASSPORT_NUMBER" />
+                <ScalarProperty Name="BIRTHDAY" ColumnName="BIRTHDAY" />
+                <ScalarProperty Name="FULL_NAME" ColumnName="FULL_NAME" />
+                <ScalarProperty Name="PASSENGER_ID" ColumnName="PASSENGER_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_PAYMENTS">
+            <EntityTypeMapping TypeName="FLIGHT_MANAGEMENTModel.tb_PAYMENTS">
+              <MappingFragment StoreEntitySet="tb_PAYMENTS">
+                <ScalarProperty Name="PAYMENT_STATUS" ColumnName="PAYMENT_STATUS" />
+                <ScalarProperty Name="PAYMENT_METHOD" ColumnName="PAYMENT_METHOD" />
+                <ScalarProperty Name="AMOUNT" ColumnName="AMOUNT" />
+                <ScalarProperty Name="PAYMENT_DATETIME" ColumnName="PAYMENT_DATETIME" />
+                <ScalarProperty Name="BOOKING_ID" ColumnName="BOOKING_ID" />
+                <ScalarProperty Name="PAYMENT_ID" ColumnName="PAYMENT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_SEATS">
+            <EntityTypeMapping TypeName="FLIGHT_MANAGEMENTModel.tb_SEATS">
+              <MappingFragment StoreEntitySet="tb_SEATS">
+                <ScalarProperty Name="CLASS" ColumnName="CLASS" />
+                <ScalarProperty Name="SEAT_NUMBER" ColumnName="SEAT_NUMBER" />
+                <ScalarProperty Name="AIRCRAFT_ID" ColumnName="AIRCRAFT_ID" />
+                <ScalarProperty Name="SEAT_ID" ColumnName="SEAT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_TAIKHOANNHANVIEN">
+            <EntityTypeMapping TypeName="FLIGHT_MANAGEMENTModel.tb_TAIKHOANNHANVIEN">
+              <MappingFragment StoreEntitySet="tb_TAIKHOANNHANVIEN">
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="IDNV" ColumnName="IDNV" />
+                <ScalarProperty Name="IDTAIKHOAN" ColumnName="IDTAIKHOAN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

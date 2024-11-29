@@ -1,0 +1,12 @@
+C:\Flight_management\FlightManagement\DataLayer\bin\Release\DataLayer.dll.config
+C:\Flight_management\FlightManagement\DataLayer\bin\Release\DataLayer.dll
+C:\Flight_management\FlightManagement\DataLayer\bin\Release\DataLayer.pdb
+C:\Flight_management\FlightManagement\DataLayer\bin\Release\EntityFramework.dll
+C:\Flight_management\FlightManagement\DataLayer\bin\Release\EntityFramework.SqlServer.dll
+C:\Flight_management\FlightManagement\DataLayer\bin\Release\EntityFramework.xml
+C:\Flight_management\FlightManagement\DataLayer\bin\Release\EntityFramework.SqlServer.xml
+C:\Flight_management\FlightManagement\DataLayer\obj\Release\DataLayer.csproj.AssemblyReference.cache
+C:\Flight_management\FlightManagement\DataLayer\obj\Release\DataLayer.csproj.CoreCompileInputs.cache
+C:\Flight_management\FlightManagement\DataLayer\obj\Release\DataLayer.csproj.Up2Date
+C:\Flight_management\FlightManagement\DataLayer\obj\Release\DataLayer.dll
+C:\Flight_management\FlightManagement\DataLayer\obj\Release\DataLayer.pdb

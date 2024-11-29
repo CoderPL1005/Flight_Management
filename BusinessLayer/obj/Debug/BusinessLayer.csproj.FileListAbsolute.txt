@@ -1,0 +1,15 @@
+C:\Flight_management\FlightManagement\BusinessLayer\bin\Debug\BusinessLayer.dll.config
+C:\Flight_management\FlightManagement\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Flight_management\FlightManagement\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Flight_management\FlightManagement\BusinessLayer\bin\Debug\DataLayer.dll
+C:\Flight_management\FlightManagement\BusinessLayer\bin\Debug\EntityFramework.dll
+C:\Flight_management\FlightManagement\BusinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Flight_management\FlightManagement\BusinessLayer\bin\Debug\DataLayer.pdb
+C:\Flight_management\FlightManagement\BusinessLayer\bin\Debug\DataLayer.dll.config
+C:\Flight_management\FlightManagement\BusinessLayer\bin\Debug\EntityFramework.xml
+C:\Flight_management\FlightManagement\BusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Flight_management\FlightManagement\BusinessLayer\obj\Debug\BusinessLayer.csproj.AssemblyReference.cache
+C:\Flight_management\FlightManagement\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Flight_management\FlightManagement\BusinessLayer\obj\Debug\Business.EA331CBA.Up2Date
+C:\Flight_management\FlightManagement\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Flight_management\FlightManagement\BusinessLayer\obj\Debug\BusinessLayer.pdb

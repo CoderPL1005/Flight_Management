@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FLIGHT_MANAGEMENTModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="FLIGHT_MANAGEMENTModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_AIRCRAFT">
+      <EntityTypeMapping TypeName="FLIGHT_MANAGEMENTModel.tb_AIRCRAFT">
+        <MappingFragment StoreEntitySet="tb_AIRCRAFT">
+          <ScalarProperty Name="MANUFACTURER" ColumnName="MANUFACTURER" />
+          <ScalarProperty Name="CAPACITY" ColumnName="CAPACITY" />
+          <ScalarProperty Name="MODEL" ColumnName="MODEL" />
+          <ScalarProperty Name="AIRCRAFT_ID" ColumnName="AIRCRAFT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_AIRPORTS">
+      <EntityTypeMapping TypeName="FLIGHT_MANAGEMENTModel.tb_AIRPORTS">
+        <MappingFragment StoreEntitySet="tb_AIRPORTS">
+          <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="AIPORT_NAME" ColumnName="AIPORT_NAME" />
+          <ScalarProperty Name="AIRPORT_ID" ColumnName="AIRPORT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_BOOKINGS">
+      <EntityTypeMapping TypeName="FLIGHT_MANAGEMENTModel.tb_BOOKINGS">
+        <MappingFragment StoreEntitySet="tb_BOOKINGS">
+          <ScalarProperty Name="BOOKING_STATUS" ColumnName="BOOKING_STATUS" />
+          <ScalarProperty Name="SEAT_ID" ColumnName="SEAT_ID" />
+          <ScalarProperty Name="BOOKING_DATE" ColumnName="BOOKING_DATE" />
+          <ScalarProperty Name="PASSENGER_ID" ColumnName="PASSENGER_ID" />
+          <ScalarProperty Name="FLIGHT_ID" ColumnName="FLIGHT_ID" />
+          <ScalarProperty Name="BOOKING_ID" ColumnName="BOOKING_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_CHECKINS">
+      <EntityTypeMapping TypeName="FLIGHT_MANAGEMENTModel.tb_CHECKINS">
+        <MappingFragment StoreEntitySet="tb_CHECKINS">
+          <ScalarProperty Name="CHECKIN_STATUS" ColumnName="CHECKIN_STATUS" />
+          <ScalarProperty Name="SEAT_ID" ColumnName="SEAT_ID" />
+          <ScalarProperty Name="BAGGAGE_COUNT" ColumnName="BAGGAGE_COUNT" />
+          <ScalarProperty Name="CHECKIN_TIME" ColumnName="CHECKIN_TIME" />
+          <ScalarProperty Name="BOOKING_ID" ColumnName="BOOKING_ID" />
+          <ScalarProperty Name="CHECKIN_ID" ColumnName="CHECKIN_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_CHUCVU">
+      <EntityTypeMapping TypeName="FLIGHT_MANAGEMENTModel.tb_CHUCVU">
+        <MappingFragment StoreEntitySet="tb_CHUCVU">
+          <ScalarProperty Name="CHUCVU" ColumnName="CHUCVU" />
+          <ScalarProperty Name="IDCHUCVU" ColumnName="IDCHUCVU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_FLIGHTS">
+      <EntityTypeMapping TypeName="FLIGHT_MANAGEMENTModel.tb_FLIGHTS">
+        <MappingFragment StoreEntitySet="tb_FLIGHTS">
+          <ScalarProperty Name="GATE" ColumnName="GATE" />
+          <ScalarProperty Name="FLIGHT_STATUS" ColumnName="FLIGHT_STATUS" />
+          <ScalarProperty Name="AIRCRAFT_ID" ColumnName="AIRCRAFT_ID" />
+          <ScalarProperty Name="ARRIVAL_TIME" ColumnName="ARRIVAL_TIME" />
+          <ScalarProperty Name="DEPARTURE_TIME" ColumnName="DEPARTURE_TIME" />
+          <ScalarProperty Name="DESTINATION_AIRPORT_ID" ColumnName="DESTINATION_AIRPORT_ID" />
+          <ScalarProperty Name="ORIGIN_AIRPORT_ID" ColumnName="ORIGIN_AIRPORT_ID" />
+          <ScalarProperty Name="AIRLINE" ColumnName="AIRLINE" />
+          <ScalarProperty Name="FLIGHT_ID" ColumnName="FLIGHT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_FUNC">
+      <EntityTypeMapping TypeName="FLIGHT_MANAGEMENTModel.tb_FUNC">
+        <MappingFragment StoreEntitySet="tb_FUNC">
+          <ScalarProperty Name="TIPS" ColumnName="TIPS" />
+          <ScalarProperty Name="MENU" ColumnName="MENU" />
+          <ScalarProperty Name="PARENT" ColumnName="PARENT" />
+          <ScalarProperty Name="IGROUP" ColumnName="IGROUP" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="SORT" ColumnName="SORT" />
+          <ScalarProperty Name="FUNC_CODE" ColumnName="FUNC_CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_Member">
+      <EntityTypeMapping TypeName="FLIGHT_MANAGEMENTModel.tb_Member">
+        <MappingFragment StoreEntitySet="tb_Member">
+          <ScalarProperty Name="IMAGE_PART" ColumnName="IMAGE_PART" />
+          <ScalarProperty Name="DIENTHOAI" ColumnName="DIENTHOAI" />
+          <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+          <ScalarProperty Name="NGAYSINH" ColumnName="NGAYSINH" />
+          <ScalarProperty Name="GIOITINH" ColumnName="GIOITINH" />
+          <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_NHANVIEN">
+      <EntityTypeMapping TypeName="FLIGHT_MANAGEMENTModel.tb_NHANVIEN">
+        <MappingFragment StoreEntitySet="tb_NHANVIEN">
+          <ScalarProperty Name="DISABLED" ColumnName="DISABLED" />
+          <ScalarProperty Name="IDCHUCVU" ColumnName="IDCHUCVU" />
+          <ScalarProperty Name="NGAYVAOLAM" ColumnName="NGAYVAOLAM" />
+          <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+          <ScalarProperty Name="NGAYSINH" ColumnName="NGAYSINH" />
+          <ScalarProperty Name="GIOITINH" ColumnName="GIOITINH" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="DIENTHOAI" ColumnName="DIENTHOAI" />
+          <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
+          <ScalarProperty Name="IDNV" ColumnName="IDNV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_PASSENGERS">
+      <EntityTypeMapping TypeName="FLIGHT_MANAGEMENTModel.tb_PASSENGERS">
+        <MappingFragment StoreEntitySet="tb_PASSENGERS">
+          <ScalarProperty Name="PHONE_NUMBER" ColumnName="PHONE_NUMBER" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="NATIONALITY" ColumnName="NATIONALITY" />
+          <ScalarProperty Name="PASSPORT_NUMBER" ColumnName="PASSPORT_NUMBER" />
+          <ScalarProperty Name="BIRTHDAY" ColumnName="BIRTHDAY" />
+          <ScalarProperty Name="FULL_NAME" ColumnName="FULL_NAME" />
+          <ScalarProperty Name="PASSENGER_ID" ColumnName="PASSENGER_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_PAYMENTS">
+      <EntityTypeMapping TypeName="FLIGHT_MANAGEMENTModel.tb_PAYMENTS">
+        <MappingFragment StoreEntitySet="tb_PAYMENTS">
+          <ScalarProperty Name="PAYMENT_STATUS" ColumnName="PAYMENT_STATUS" />
+          <ScalarProperty Name="PAYMENT_METHOD" ColumnName="PAYMENT_METHOD" />
+          <ScalarProperty Name="AMOUNT" ColumnName="AMOUNT" />
+          <ScalarProperty Name="PAYMENT_DATETIME" ColumnName="PAYMENT_DATETIME" />
+          <ScalarProperty Name="BOOKING_ID" ColumnName="BOOKING_ID" />
+          <ScalarProperty Name="PAYMENT_ID" ColumnName="PAYMENT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_SEATS">
+      <EntityTypeMapping TypeName="FLIGHT_MANAGEMENTModel.tb_SEATS">
+        <MappingFragment StoreEntitySet="tb_SEATS">
+          <ScalarProperty Name="CLASS" ColumnName="CLASS" />
+          <ScalarProperty Name="SEAT_NUMBER" ColumnName="SEAT_NUMBER" />
+          <ScalarProperty Name="AIRCRAFT_ID" ColumnName="AIRCRAFT_ID" />
+          <ScalarProperty Name="SEAT_ID" ColumnName="SEAT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_TAIKHOANNHANVIEN">
+      <EntityTypeMapping TypeName="FLIGHT_MANAGEMENTModel.tb_TAIKHOANNHANVIEN">
+        <MappingFragment StoreEntitySet="tb_TAIKHOANNHANVIEN">
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="IDNV" ColumnName="IDNV" />
+          <ScalarProperty Name="IDTAIKHOAN" ColumnName="IDTAIKHOAN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

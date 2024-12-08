@@ -3,33 +3,32 @@
   <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="sysdiagrams" EntityType="FLIGHT_MANAGEMENTModel.sysdiagram" />
     <EntitySet Name="tb_AIRCRAFT" EntityType="FLIGHT_MANAGEMENTModel.tb_AIRCRAFT" />
+    <EntitySet Name="tb_AIRCRAFTSEATS" EntityType="FLIGHT_MANAGEMENTModel.tb_AIRCRAFTSEATS" />
     <EntitySet Name="tb_AIRPORTS" EntityType="FLIGHT_MANAGEMENTModel.tb_AIRPORTS" />
     <EntitySet Name="tb_BOOKINGS" EntityType="FLIGHT_MANAGEMENTModel.tb_BOOKINGS" />
     <EntitySet Name="tb_CHECKINS" EntityType="FLIGHT_MANAGEMENTModel.tb_CHECKINS" />
     <EntitySet Name="tb_CHUCVU" EntityType="FLIGHT_MANAGEMENTModel.tb_CHUCVU" />
-    <EntitySet Name="tb_FLIGHTS" EntityType="FLIGHT_MANAGEMENTModel.tb_FLIGHTS" />
+    <EntitySet Name="tb_FLIGHT" EntityType="FLIGHT_MANAGEMENTModel.tb_FLIGHT" />
+    <EntitySet Name="tb_FLIGHT_SCHEDULES" EntityType="FLIGHT_MANAGEMENTModel.tb_FLIGHT_SCHEDULES" />
     <EntitySet Name="tb_FUNC" EntityType="FLIGHT_MANAGEMENTModel.tb_FUNC" />
     <EntitySet Name="tb_Member" EntityType="FLIGHT_MANAGEMENTModel.tb_Member" />
     <EntitySet Name="tb_NHANVIEN" EntityType="FLIGHT_MANAGEMENTModel.tb_NHANVIEN" />
     <EntitySet Name="tb_PASSENGERS" EntityType="FLIGHT_MANAGEMENTModel.tb_PASSENGERS" />
     <EntitySet Name="tb_PAYMENTS" EntityType="FLIGHT_MANAGEMENTModel.tb_PAYMENTS" />
+    <EntitySet Name="tb_PhanQuyen" EntityType="FLIGHT_MANAGEMENTModel.tb_PhanQuyen" />
     <EntitySet Name="tb_SEATS" EntityType="FLIGHT_MANAGEMENTModel.tb_SEATS" />
     <EntitySet Name="tb_TAIKHOANNHANVIEN" EntityType="FLIGHT_MANAGEMENTModel.tb_TAIKHOANNHANVIEN" />
-    <AssociationSet Name="FK__tb_FLIGHT__AIRCR__71D1E811" Association="FLIGHT_MANAGEMENTModel.FK__tb_FLIGHT__AIRCR__71D1E811">
+    <AssociationSet Name="FK__tb_AIRCRA__AIRCR__6ABAD62E" Association="FLIGHT_MANAGEMENTModel.FK__tb_AIRCRA__AIRCR__6ABAD62E">
       <End Role="tb_AIRCRAFT" EntitySet="tb_AIRCRAFT" />
-      <End Role="tb_FLIGHTS" EntitySet="tb_FLIGHTS" />
+      <End Role="tb_AIRCRAFTSEATS" EntitySet="tb_AIRCRAFTSEATS" />
     </AssociationSet>
-    <AssociationSet Name="FK__tb_SEATS__AIRCRA__02084FDA" Association="FLIGHT_MANAGEMENTModel.FK__tb_SEATS__AIRCRA__02084FDA">
+    <AssociationSet Name="FK__tb_FLIGHT__AIRCR__2EA5EC27" Association="FLIGHT_MANAGEMENTModel.FK__tb_FLIGHT__AIRCR__2EA5EC27">
       <End Role="tb_AIRCRAFT" EntitySet="tb_AIRCRAFT" />
+      <End Role="tb_FLIGHT" EntitySet="tb_FLIGHT" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_AIRCRA__SEATS__6BAEFA67" Association="FLIGHT_MANAGEMENTModel.FK__tb_AIRCRA__SEATS__6BAEFA67">
       <End Role="tb_SEATS" EntitySet="tb_SEATS" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tb_FLIGHT__DESTI__70DDC3D8" Association="FLIGHT_MANAGEMENTModel.FK__tb_FLIGHT__DESTI__70DDC3D8">
-      <End Role="tb_AIRPORTS" EntitySet="tb_AIRPORTS" />
-      <End Role="tb_FLIGHTS" EntitySet="tb_FLIGHTS" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tb_FLIGHT__ORIGI__6FE99F9F" Association="FLIGHT_MANAGEMENTModel.FK__tb_FLIGHT__ORIGI__6FE99F9F">
-      <End Role="tb_AIRPORTS" EntitySet="tb_AIRPORTS" />
-      <End Role="tb_FLIGHTS" EntitySet="tb_FLIGHTS" />
+      <End Role="tb_AIRCRAFTSEATS" EntitySet="tb_AIRCRAFTSEATS" />
     </AssociationSet>
     <AssociationSet Name="FK__CHECKINS__BOOKIN__09A971A2" Association="FLIGHT_MANAGEMENTModel.FK__CHECKINS__BOOKIN__09A971A2">
       <End Role="tb_BOOKINGS" EntitySet="tb_BOOKINGS" />
@@ -40,7 +39,7 @@
       <End Role="tb_PAYMENTS" EntitySet="tb_PAYMENTS" />
     </AssociationSet>
     <AssociationSet Name="FK__tb_BOOKIN__FLIGH__04E4BC85" Association="FLIGHT_MANAGEMENTModel.FK__tb_BOOKIN__FLIGH__04E4BC85">
-      <End Role="tb_FLIGHTS" EntitySet="tb_FLIGHTS" />
+      <End Role="tb_FLIGHT_SCHEDULES" EntitySet="tb_FLIGHT_SCHEDULES" />
       <End Role="tb_BOOKINGS" EntitySet="tb_BOOKINGS" />
     </AssociationSet>
     <AssociationSet Name="FK__tb_BOOKIN__PASSE__05D8E0BE" Association="FLIGHT_MANAGEMENTModel.FK__tb_BOOKIN__PASSE__05D8E0BE">
@@ -58,6 +57,18 @@
     <AssociationSet Name="FK__tb_NHANVI__IDCHU__44CA3770" Association="FLIGHT_MANAGEMENTModel.FK__tb_NHANVI__IDCHU__44CA3770">
       <End Role="tb_CHUCVU" EntitySet="tb_CHUCVU" />
       <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_PhanQu__IDCHU__76619304" Association="FLIGHT_MANAGEMENTModel.FK__tb_PhanQu__IDCHU__76619304">
+      <End Role="tb_CHUCVU" EntitySet="tb_CHUCVU" />
+      <End Role="tb_PhanQuyen" EntitySet="tb_PhanQuyen" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_FLIGHT__FLIGH__2DB1C7EE" Association="FLIGHT_MANAGEMENTModel.FK__tb_FLIGHT__FLIGH__2DB1C7EE">
+      <End Role="tb_FLIGHT_SCHEDULES" EntitySet="tb_FLIGHT_SCHEDULES" />
+      <End Role="tb_FLIGHT" EntitySet="tb_FLIGHT" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_PhanQu__FUNC___756D6ECB" Association="FLIGHT_MANAGEMENTModel.FK__tb_PhanQu__FUNC___756D6ECB">
+      <End Role="tb_FUNC" EntitySet="tb_FUNC" />
+      <End Role="tb_PhanQuyen" EntitySet="tb_PhanQuyen" />
     </AssociationSet>
     <AssociationSet Name="FK__tb_TAIKHOA__IDNV__47A6A41B" Association="FLIGHT_MANAGEMENTModel.FK__tb_TAIKHOA__IDNV__47A6A41B">
       <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
@@ -82,8 +93,20 @@
     <Property Name="MODEL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="CAPACITY" Type="Int32" />
     <Property Name="MANUFACTURER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="tb_FLIGHTS" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_FLIGHT__AIRCR__71D1E811" FromRole="tb_AIRCRAFT" ToRole="tb_FLIGHTS" />
-    <NavigationProperty Name="tb_SEATS" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_SEATS__AIRCRA__02084FDA" FromRole="tb_AIRCRAFT" ToRole="tb_SEATS" />
+    <NavigationProperty Name="tb_AIRCRAFTSEATS" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_AIRCRA__AIRCR__6ABAD62E" FromRole="tb_AIRCRAFT" ToRole="tb_AIRCRAFTSEATS" />
+    <NavigationProperty Name="tb_FLIGHT" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_FLIGHT__AIRCR__2EA5EC27" FromRole="tb_AIRCRAFT" ToRole="tb_FLIGHT" />
+  </EntityType>
+  <EntityType Name="tb_AIRCRAFTSEATS">
+    <Key>
+      <PropertyRef Name="AIRCRAFTSEATSID" />
+    </Key>
+    <Property Name="AIRCRAFTSEATSID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AIRCRAFT_ID" Type="Int32" />
+    <Property Name="SEATS_ID" Type="Int32" />
+    <Property Name="SEAT_NUMBER" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="PRICE" Type="Decimal" Precision="10" Scale="2" />
+    <NavigationProperty Name="tb_AIRCRAFT" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_AIRCRA__AIRCR__6ABAD62E" FromRole="tb_AIRCRAFTSEATS" ToRole="tb_AIRCRAFT" />
+    <NavigationProperty Name="tb_SEATS" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_AIRCRA__SEATS__6BAEFA67" FromRole="tb_AIRCRAFTSEATS" ToRole="tb_SEATS" />
   </EntityType>
   <EntityType Name="tb_AIRPORTS">
     <Key>
@@ -93,8 +116,6 @@
     <Property Name="AIPORT_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="CITY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="COUNTRY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="tb_FLIGHTS" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_FLIGHT__DESTI__70DDC3D8" FromRole="tb_AIRPORTS" ToRole="tb_FLIGHTS" />
-    <NavigationProperty Name="tb_FLIGHTS1" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_FLIGHT__ORIGI__6FE99F9F" FromRole="tb_AIRPORTS" ToRole="tb_FLIGHTS" />
   </EntityType>
   <EntityType Name="tb_BOOKINGS">
     <Key>
@@ -108,7 +129,7 @@
     <Property Name="BOOKING_STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="tb_CHECKINS" Relationship="FLIGHT_MANAGEMENTModel.FK__CHECKINS__BOOKIN__09A971A2" FromRole="tb_BOOKINGS" ToRole="tb_CHECKINS" />
     <NavigationProperty Name="tb_PAYMENTS" Relationship="FLIGHT_MANAGEMENTModel.FK__PAYMENTS__BOOKIN__0D7A0286" FromRole="tb_BOOKINGS" ToRole="tb_PAYMENTS" />
-    <NavigationProperty Name="tb_FLIGHTS" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_BOOKIN__FLIGH__04E4BC85" FromRole="tb_BOOKINGS" ToRole="tb_FLIGHTS" />
+    <NavigationProperty Name="tb_FLIGHT_SCHEDULES" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_BOOKIN__FLIGH__04E4BC85" FromRole="tb_BOOKINGS" ToRole="tb_FLIGHT_SCHEDULES" />
     <NavigationProperty Name="tb_PASSENGERS" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_BOOKIN__PASSE__05D8E0BE" FromRole="tb_BOOKINGS" ToRole="tb_PASSENGERS" />
     <NavigationProperty Name="tb_SEATS" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_BOOKIN__SEAT___06CD04F7" FromRole="tb_BOOKINGS" ToRole="tb_SEATS" />
   </EntityType>
@@ -132,24 +153,32 @@
     <Property Name="IDCHUCVU" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="CHUCVU" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="tb_NHANVIEN" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_NHANVI__IDCHU__44CA3770" FromRole="tb_CHUCVU" ToRole="tb_NHANVIEN" />
+    <NavigationProperty Name="tb_PhanQuyen" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_PhanQu__IDCHU__76619304" FromRole="tb_CHUCVU" ToRole="tb_PhanQuyen" />
   </EntityType>
-  <EntityType Name="tb_FLIGHTS">
+  <EntityType Name="tb_FLIGHT">
+    <Key>
+      <PropertyRef Name="ID_FLIGHT" />
+    </Key>
+    <Property Name="ID_FLIGHT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FLIGHT_ID" Type="Int32" />
+    <Property Name="AIRCRAFT_ID" Type="Int32" />
+    <Property Name="DEPARTURE_TIME" Type="Time" Precision="7" />
+    <Property Name="ARRIVAL_TIME" Type="Time" Precision="7" />
+    <Property Name="DATE" Type="DateTime" Precision="0" />
+    <Property Name="FLIGHT_STATUS" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tb_AIRCRAFT" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_FLIGHT__AIRCR__2EA5EC27" FromRole="tb_FLIGHT" ToRole="tb_AIRCRAFT" />
+    <NavigationProperty Name="tb_FLIGHT_SCHEDULES" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_FLIGHT__FLIGH__2DB1C7EE" FromRole="tb_FLIGHT" ToRole="tb_FLIGHT_SCHEDULES" />
+  </EntityType>
+  <EntityType Name="tb_FLIGHT_SCHEDULES">
     <Key>
       <PropertyRef Name="FLIGHT_ID" />
     </Key>
     <Property Name="FLIGHT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="AIRLINE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="ORIGIN_AIRPORT_ID" Type="Int32" />
     <Property Name="DESTINATION_AIRPORT_ID" Type="Int32" />
-    <Property Name="DEPARTURE_TIME" Type="DateTime" Precision="3" />
-    <Property Name="ARRIVAL_TIME" Type="DateTime" Precision="3" />
-    <Property Name="AIRCRAFT_ID" Type="Int32" />
     <Property Name="FLIGHT_STATUS" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="GATE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="tb_AIRCRAFT" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_FLIGHT__AIRCR__71D1E811" FromRole="tb_FLIGHTS" ToRole="tb_AIRCRAFT" />
-    <NavigationProperty Name="tb_AIRPORTS" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_FLIGHT__DESTI__70DDC3D8" FromRole="tb_FLIGHTS" ToRole="tb_AIRPORTS" />
-    <NavigationProperty Name="tb_AIRPORTS1" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_FLIGHT__ORIGI__6FE99F9F" FromRole="tb_FLIGHTS" ToRole="tb_AIRPORTS" />
-    <NavigationProperty Name="tb_BOOKINGS" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_BOOKIN__FLIGH__04E4BC85" FromRole="tb_FLIGHTS" ToRole="tb_BOOKINGS" />
+    <NavigationProperty Name="tb_BOOKINGS" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_BOOKIN__FLIGH__04E4BC85" FromRole="tb_FLIGHT_SCHEDULES" ToRole="tb_BOOKINGS" />
+    <NavigationProperty Name="tb_FLIGHT" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_FLIGHT__FLIGH__2DB1C7EE" FromRole="tb_FLIGHT_SCHEDULES" ToRole="tb_FLIGHT" />
   </EntityType>
   <EntityType Name="tb_FUNC">
     <Key>
@@ -162,6 +191,7 @@
     <Property Name="PARENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="MENU" Type="Boolean" />
     <Property Name="TIPS" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tb_PhanQuyen" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_PhanQu__FUNC___756D6ECB" FromRole="tb_FUNC" ToRole="tb_PhanQuyen" />
   </EntityType>
   <EntityType Name="tb_Member">
     <Key>
@@ -175,7 +205,8 @@
     <Property Name="NGAYSINH" Type="DateTime" Precision="0" />
     <Property Name="DIACHI" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="DIENTHOAI" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="IMAGE_PART" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IMAGE_PART" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DISABLED" Type="Boolean" />
   </EntityType>
   <EntityType Name="tb_NHANVIEN">
     <Key>
@@ -219,15 +250,24 @@
     <Property Name="PAYMENT_STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="tb_BOOKINGS" Relationship="FLIGHT_MANAGEMENTModel.FK__PAYMENTS__BOOKIN__0D7A0286" FromRole="tb_PAYMENTS" ToRole="tb_BOOKINGS" />
   </EntityType>
+  <EntityType Name="tb_PhanQuyen">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FUNC_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IDCHUCVU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="QUYEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tb_CHUCVU" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_PhanQu__IDCHU__76619304" FromRole="tb_PhanQuyen" ToRole="tb_CHUCVU" />
+    <NavigationProperty Name="tb_FUNC" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_PhanQu__FUNC___756D6ECB" FromRole="tb_PhanQuyen" ToRole="tb_FUNC" />
+  </EntityType>
   <EntityType Name="tb_SEATS">
     <Key>
       <PropertyRef Name="SEAT_ID" />
     </Key>
     <Property Name="SEAT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="AIRCRAFT_ID" Type="Int32" />
-    <Property Name="SEAT_NUMBER" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="CLASS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="tb_AIRCRAFT" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_SEATS__AIRCRA__02084FDA" FromRole="tb_SEATS" ToRole="tb_AIRCRAFT" />
+    <Property Name="CLASS" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tb_AIRCRAFTSEATS" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_AIRCRA__SEATS__6BAEFA67" FromRole="tb_SEATS" ToRole="tb_AIRCRAFTSEATS" />
     <NavigationProperty Name="tb_BOOKINGS" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_BOOKIN__SEAT___06CD04F7" FromRole="tb_SEATS" ToRole="tb_BOOKINGS" />
     <NavigationProperty Name="tb_CHECKINS" Relationship="FLIGHT_MANAGEMENTModel.FK__CHECKINS__SEAT_I__0A9D95DB" FromRole="tb_SEATS" ToRole="tb_CHECKINS" />
   </EntityType>
@@ -241,51 +281,39 @@
     <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="tb_NHANVIEN" Relationship="FLIGHT_MANAGEMENTModel.FK__tb_TAIKHOA__IDNV__47A6A41B" FromRole="tb_TAIKHOANNHANVIEN" ToRole="tb_NHANVIEN" />
   </EntityType>
-  <Association Name="FK__tb_FLIGHT__AIRCR__71D1E811">
+  <Association Name="FK__tb_AIRCRA__AIRCR__6ABAD62E">
     <End Type="FLIGHT_MANAGEMENTModel.tb_AIRCRAFT" Role="tb_AIRCRAFT" Multiplicity="0..1" />
-    <End Type="FLIGHT_MANAGEMENTModel.tb_FLIGHTS" Role="tb_FLIGHTS" Multiplicity="*" />
+    <End Type="FLIGHT_MANAGEMENTModel.tb_AIRCRAFTSEATS" Role="tb_AIRCRAFTSEATS" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tb_AIRCRAFT">
         <PropertyRef Name="AIRCRAFT_ID" />
       </Principal>
-      <Dependent Role="tb_FLIGHTS">
+      <Dependent Role="tb_AIRCRAFTSEATS">
         <PropertyRef Name="AIRCRAFT_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_SEATS__AIRCRA__02084FDA">
+  <Association Name="FK__tb_FLIGHT__AIRCR__2EA5EC27">
     <End Type="FLIGHT_MANAGEMENTModel.tb_AIRCRAFT" Role="tb_AIRCRAFT" Multiplicity="0..1" />
-    <End Type="FLIGHT_MANAGEMENTModel.tb_SEATS" Role="tb_SEATS" Multiplicity="*" />
+    <End Type="FLIGHT_MANAGEMENTModel.tb_FLIGHT" Role="tb_FLIGHT" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tb_AIRCRAFT">
         <PropertyRef Name="AIRCRAFT_ID" />
       </Principal>
-      <Dependent Role="tb_SEATS">
+      <Dependent Role="tb_FLIGHT">
         <PropertyRef Name="AIRCRAFT_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_FLIGHT__DESTI__70DDC3D8">
-    <End Type="FLIGHT_MANAGEMENTModel.tb_AIRPORTS" Role="tb_AIRPORTS" Multiplicity="0..1" />
-    <End Type="FLIGHT_MANAGEMENTModel.tb_FLIGHTS" Role="tb_FLIGHTS" Multiplicity="*" />
+  <Association Name="FK__tb_AIRCRA__SEATS__6BAEFA67">
+    <End Type="FLIGHT_MANAGEMENTModel.tb_SEATS" Role="tb_SEATS" Multiplicity="0..1" />
+    <End Type="FLIGHT_MANAGEMENTModel.tb_AIRCRAFTSEATS" Role="tb_AIRCRAFTSEATS" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="tb_AIRPORTS">
-        <PropertyRef Name="AIRPORT_ID" />
+      <Principal Role="tb_SEATS">
+        <PropertyRef Name="SEAT_ID" />
       </Principal>
-      <Dependent Role="tb_FLIGHTS">
-        <PropertyRef Name="DESTINATION_AIRPORT_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__tb_FLIGHT__ORIGI__6FE99F9F">
-    <End Type="FLIGHT_MANAGEMENTModel.tb_AIRPORTS" Role="tb_AIRPORTS" Multiplicity="0..1" />
-    <End Type="FLIGHT_MANAGEMENTModel.tb_FLIGHTS" Role="tb_FLIGHTS" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_AIRPORTS">
-        <PropertyRef Name="AIRPORT_ID" />
-      </Principal>
-      <Dependent Role="tb_FLIGHTS">
-        <PropertyRef Name="ORIGIN_AIRPORT_ID" />
+      <Dependent Role="tb_AIRCRAFTSEATS">
+        <PropertyRef Name="SEATS_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -314,10 +342,10 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__tb_BOOKIN__FLIGH__04E4BC85">
-    <End Type="FLIGHT_MANAGEMENTModel.tb_FLIGHTS" Role="tb_FLIGHTS" Multiplicity="0..1" />
+    <End Type="FLIGHT_MANAGEMENTModel.tb_FLIGHT_SCHEDULES" Role="tb_FLIGHT_SCHEDULES" Multiplicity="0..1" />
     <End Type="FLIGHT_MANAGEMENTModel.tb_BOOKINGS" Role="tb_BOOKINGS" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="tb_FLIGHTS">
+      <Principal Role="tb_FLIGHT_SCHEDULES">
         <PropertyRef Name="FLIGHT_ID" />
       </Principal>
       <Dependent Role="tb_BOOKINGS">
@@ -370,6 +398,42 @@
       </Principal>
       <Dependent Role="tb_NHANVIEN">
         <PropertyRef Name="IDCHUCVU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_PhanQu__IDCHU__76619304">
+    <End Type="FLIGHT_MANAGEMENTModel.tb_CHUCVU" Role="tb_CHUCVU" Multiplicity="0..1" />
+    <End Type="FLIGHT_MANAGEMENTModel.tb_PhanQuyen" Role="tb_PhanQuyen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_CHUCVU">
+        <PropertyRef Name="IDCHUCVU" />
+      </Principal>
+      <Dependent Role="tb_PhanQuyen">
+        <PropertyRef Name="IDCHUCVU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_FLIGHT__FLIGH__2DB1C7EE">
+    <End Type="FLIGHT_MANAGEMENTModel.tb_FLIGHT_SCHEDULES" Role="tb_FLIGHT_SCHEDULES" Multiplicity="0..1" />
+    <End Type="FLIGHT_MANAGEMENTModel.tb_FLIGHT" Role="tb_FLIGHT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_FLIGHT_SCHEDULES">
+        <PropertyRef Name="FLIGHT_ID" />
+      </Principal>
+      <Dependent Role="tb_FLIGHT">
+        <PropertyRef Name="FLIGHT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_PhanQu__FUNC___756D6ECB">
+    <End Type="FLIGHT_MANAGEMENTModel.tb_FUNC" Role="tb_FUNC" Multiplicity="0..1" />
+    <End Type="FLIGHT_MANAGEMENTModel.tb_PhanQuyen" Role="tb_PhanQuyen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_FUNC">
+        <PropertyRef Name="FUNC_CODE" />
+      </Principal>
+      <Dependent Role="tb_PhanQuyen">
+        <PropertyRef Name="FUNC_CODE" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

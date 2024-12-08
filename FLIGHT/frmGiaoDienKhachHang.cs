@@ -1,6 +1,7 @@
 ﻿using BusinessLayer;
 using DevExpress.Utils.ScrollAnnotations;
 using DevExpress.XtraEditors;
+using FLIGHT.Support_Form;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,6 +35,12 @@ namespace FLIGHT
         private void frmGiaoDienKhachHang_Load(object sender, EventArgs e)
         {
             _member = new MEMBER();
+            frmChonThoiGianBay frm = new frmChonThoiGianBay();
+            frm.TopLevel = false;
+            frm.Height = panMain.Height;
+            frm.Width = panMain.Width;
+            panMain.Controls.Add(frm);
+            frm.Show();
         }
         private void butDangNhap_Click(object sender, EventArgs e)
         {
@@ -210,20 +217,26 @@ namespace FLIGHT
             frmvd.Show();
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void toolMain_Click(object sender, EventArgs e)
         {
             panMain.Controls.Clear();
-            panDatVe.Show();
+            frmChonThoiGianBay frm = new frmChonThoiGianBay();
+            frm.TopLevel = false;
+            frm.Height = panMain.Height;
+            frm.Width = panMain.Width;
+            panMain.Controls.Add(frm);
+            frm.Show();
         }
 
         private void butDatVe_Click(object sender, EventArgs e)
         {
             panMain.Controls.Clear();
-        }
-
-        private void dropDownButton1_Click(object sender, EventArgs e)
-        {
-            panSoKhach.Show();
+            frmChonThoiGianBay frm = new frmChonThoiGianBay();
+            frm.TopLevel = false;
+            frm.Height = panMain.Height;
+            frm.Width = panMain.Width;
+            panMain.Controls.Add(frm);
+            frm.Show();
         }
     }
 }

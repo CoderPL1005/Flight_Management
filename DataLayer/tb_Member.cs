@@ -23,5 +23,6 @@ namespace DataLayer
         public string DIACHI { get; set; }
         public string DIENTHOAI { get; set; }
         public string IMAGE_PART { get; set; }
+        public Nullable<bool> DISABLED { get; set; }
     }
 }

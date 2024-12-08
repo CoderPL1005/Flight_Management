@@ -51,9 +51,8 @@ namespace ADMIN
                     check = true;
                     if (txtPassword.Text == pass)
                     {
-                        string IDNhanVien = _taikhoan.getIDNhanVien(username);
-                        string IDChucVu = _nhanvien.getIDChucVu(IDNhanVien);
-                        frmMain frmm = new frmMain(IDChucVu);
+                        string IDTAIKHOAN = _taikhoan.getIDTaiKhoanByUsername(username);
+                        frmMain frmm = new frmMain(IDTAIKHOAN);
                         frmm.ShowDialog();
                         this.Close();
                     }

@@ -3,20 +3,32 @@
   "WorkspaceRootPath": "C:\\Flight_management\\FlightManagement\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DEC9FB8B-5F60-4882-9EC1-296AF9AF72AB}|ADMIN\\ADMIN.csproj|c:\\flight_management\\flightmanagement\\admin\\frmaircraft.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DEC9FB8B-5F60-4882-9EC1-296AF9AF72AB}|ADMIN\\ADMIN.csproj|solutionrelative:admin\\frmaircraft.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{157E6965-840E-4A5A-B8CB-7D0288FA754E}|FLIGHT\\FLIGHT.csproj|c:\\flight_management\\flightmanagement\\flight\\support_form\\frmcalendar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{157E6965-840E-4A5A-B8CB-7D0288FA754E}|FLIGHT\\FLIGHT.csproj|solutionrelative:flight\\support_form\\frmcalendar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DEC9FB8B-5F60-4882-9EC1-296AF9AF72AB}|ADMIN\\ADMIN.csproj|C:\\Flight_management\\FlightManagement\\admin\\frmaircraft.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{DEC9FB8B-5F60-4882-9EC1-296AF9AF72AB}|ADMIN\\ADMIN.csproj|solutionrelative:admin\\frmaircraft.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{157E6965-840E-4A5A-B8CB-7D0288FA754E}|FLIGHT\\FLIGHT.csproj|c:\\flight_management\\flightmanagement\\flight\\support_form\\frmcalendar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{157E6965-840E-4A5A-B8CB-7D0288FA754E}|FLIGHT\\FLIGHT.csproj|solutionrelative:flight\\support_form\\frmcalendar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{07CBC126-35A1-44B9-8CC3-F3E5C33FF1B8}|BusinessLayer\\BusinessLayer.csproj|C:\\Flight_management\\FlightManagement\\businesslayer\\aircraft.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{07CBC126-35A1-44B9-8CC3-F3E5C33FF1B8}|BusinessLayer\\BusinessLayer.csproj|solutionrelative:businesslayer\\aircraft.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{157E6965-840E-4A5A-B8CB-7D0288FA754E}|FLIGHT\\FLIGHT.csproj|c:\\flight_management\\flightmanagement\\flight\\support_form\\frmchonthoigianbay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{157E6965-840E-4A5A-B8CB-7D0288FA754E}|FLIGHT\\FLIGHT.csproj|solutionrelative:flight\\support_form\\frmchonthoigianbay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DEC9FB8B-5F60-4882-9EC1-296AF9AF72AB}|ADMIN\\ADMIN.csproj|C:\\Flight_management\\FlightManagement\\admin\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DEC9FB8B-5F60-4882-9EC1-296AF9AF72AB}|ADMIN\\ADMIN.csproj|solutionrelative:admin\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{157E6965-840E-4A5A-B8CB-7D0288FA754E}|FLIGHT\\FLIGHT.csproj|c:\\flight_management\\flightmanagement\\flight\\frmgiaodienkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{157E6965-840E-4A5A-B8CB-7D0288FA754E}|FLIGHT\\FLIGHT.csproj|solutionrelative:flight\\frmgiaodienkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{157E6965-840E-4A5A-B8CB-7D0288FA754E}|FLIGHT\\FLIGHT.csproj|C:\\Flight_management\\FlightManagement\\flight\\support_form\\frmchonthoigianbay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{157E6965-840E-4A5A-B8CB-7D0288FA754E}|FLIGHT\\FLIGHT.csproj|solutionrelative:flight\\support_form\\frmchonthoigianbay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{157E6965-840E-4A5A-B8CB-7D0288FA754E}|FLIGHT\\FLIGHT.csproj|C:\\Flight_management\\FlightManagement\\flight\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{157E6965-840E-4A5A-B8CB-7D0288FA754E}|FLIGHT\\FLIGHT.csproj|solutionrelative:flight\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{157E6965-840E-4A5A-B8CB-7D0288FA754E}|FLIGHT\\FLIGHT.csproj|C:\\Flight_management\\FlightManagement\\flight\\frmgiaodienkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{157E6965-840E-4A5A-B8CB-7D0288FA754E}|FLIGHT\\FLIGHT.csproj|solutionrelative:flight\\frmgiaodienkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,8 +38,35 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Flight_management\\FlightManagement\\FLIGHT\\Program.cs",
+              "RelativeDocumentMoniker": "FLIGHT\\Program.cs",
+              "ToolTip": "C:\\Flight_management\\FlightManagement\\FLIGHT\\Program.cs",
+              "RelativeToolTip": "FLIGHT\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T05:32:53.076Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frmCalendar.cs",
+              "DocumentMoniker": "C:\\Flight_management\\FlightManagement\\FLIGHT\\Support_Form\\frmCalendar.cs",
+              "RelativeDocumentMoniker": "FLIGHT\\Support_Form\\frmCalendar.cs",
+              "ToolTip": "C:\\Flight_management\\FlightManagement\\FLIGHT\\Support_Form\\frmCalendar.cs",
+              "RelativeToolTip": "FLIGHT\\Support_Form\\frmCalendar.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABUAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T09:26:34.328Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
@@ -42,51 +81,65 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AIRCRAFT.cs",
-              "DocumentMoniker": "C:\\Flight_management\\FlightManagement\\BusinessLayer\\AIRCRAFT.cs",
-              "RelativeDocumentMoniker": "BusinessLayer\\AIRCRAFT.cs",
-              "ToolTip": "C:\\Flight_management\\FlightManagement\\BusinessLayer\\AIRCRAFT.cs",
-              "RelativeToolTip": "BusinessLayer\\AIRCRAFT.cs",
-              "ViewState": "AQIAADUAAAAAAAAAAAAQwEkAAAAJAAAA",
+              "DocumentIndex": 1,
+              "Title": "frmCalendar.cs [Design]",
+              "DocumentMoniker": "C:\\Flight_management\\FlightManagement\\FLIGHT\\Support_Form\\frmCalendar.cs",
+              "RelativeDocumentMoniker": "FLIGHT\\Support_Form\\frmCalendar.cs",
+              "ToolTip": "C:\\Flight_management\\FlightManagement\\FLIGHT\\Support_Form\\frmCalendar.cs [Design]",
+              "RelativeToolTip": "FLIGHT\\Support_Form\\frmCalendar.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-29T09:15:49.538Z"
+              "WhenOpened": "2024-12-08T09:16:36.073Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmAircraft.cs",
-              "DocumentMoniker": "C:\\Flight_management\\FlightManagement\\ADMIN\\frmAircraft.cs",
-              "RelativeDocumentMoniker": "ADMIN\\frmAircraft.cs",
-              "ToolTip": "C:\\Flight_management\\FlightManagement\\ADMIN\\frmAircraft.cs",
-              "RelativeToolTip": "ADMIN\\frmAircraft.cs",
-              "ViewState": "AQIAAJUAAAAAAAAAAAAuwK0AAAAmAAAA",
+              "DocumentIndex": 2,
+              "Title": "frmChonThoiGianBay.cs",
+              "DocumentMoniker": "C:\\Flight_management\\FlightManagement\\FLIGHT\\Support_Form\\frmChonThoiGianBay.cs",
+              "RelativeDocumentMoniker": "FLIGHT\\Support_Form\\frmChonThoiGianBay.cs",
+              "ToolTip": "C:\\Flight_management\\FlightManagement\\FLIGHT\\Support_Form\\frmChonThoiGianBay.cs",
+              "RelativeToolTip": "FLIGHT\\Support_Form\\frmChonThoiGianBay.cs",
+              "ViewState": "AQIAAHoAAAAAAAAAAAAUwIkAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-29T09:05:56.298Z",
+              "WhenOpened": "2024-12-08T09:17:31.991Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmAircraft.cs [Design]",
-              "DocumentMoniker": "C:\\Flight_management\\FlightManagement\\ADMIN\\frmAircraft.cs",
-              "RelativeDocumentMoniker": "ADMIN\\frmAircraft.cs",
-              "ToolTip": "C:\\Flight_management\\FlightManagement\\ADMIN\\frmAircraft.cs [Design]",
-              "RelativeToolTip": "ADMIN\\frmAircraft.cs [Design]",
+              "DocumentIndex": 4,
+              "Title": "frmChonThoiGianBay.cs [Design]",
+              "DocumentMoniker": "C:\\Flight_management\\FlightManagement\\FLIGHT\\Support_Form\\frmChonThoiGianBay.cs",
+              "RelativeDocumentMoniker": "FLIGHT\\Support_Form\\frmChonThoiGianBay.cs",
+              "ToolTip": "C:\\Flight_management\\FlightManagement\\FLIGHT\\Support_Form\\frmChonThoiGianBay.cs [Design]",
+              "RelativeToolTip": "FLIGHT\\Support_Form\\frmChonThoiGianBay.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-29T09:05:24.604Z"
+              "WhenOpened": "2024-12-08T07:20:08.803Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "frmMain.cs",
-              "DocumentMoniker": "C:\\Flight_management\\FlightManagement\\ADMIN\\frmMain.cs",
-              "RelativeDocumentMoniker": "ADMIN\\frmMain.cs",
-              "ToolTip": "C:\\Flight_management\\FlightManagement\\ADMIN\\frmMain.cs",
-              "RelativeToolTip": "ADMIN\\frmMain.cs",
-              "ViewState": "AQIAADgAAAAAAAAAAAAAAFMAAAA/AAAA",
+              "Title": "frmGiaoDienKhachHang.cs [Design]",
+              "DocumentMoniker": "C:\\Flight_management\\FlightManagement\\FLIGHT\\frmGiaoDienKhachHang.cs",
+              "RelativeDocumentMoniker": "FLIGHT\\frmGiaoDienKhachHang.cs",
+              "ToolTip": "C:\\Flight_management\\FlightManagement\\FLIGHT\\frmGiaoDienKhachHang.cs [Design]",
+              "RelativeToolTip": "FLIGHT\\frmGiaoDienKhachHang.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T06:44:02.656Z"
+              "WhenOpened": "2024-12-08T06:12:12.307Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "frmGiaoDienKhachHang.cs",
+              "DocumentMoniker": "C:\\Flight_management\\FlightManagement\\FLIGHT\\frmGiaoDienKhachHang.cs",
+              "RelativeDocumentMoniker": "FLIGHT\\frmGiaoDienKhachHang.cs",
+              "ToolTip": "C:\\Flight_management\\FlightManagement\\FLIGHT\\frmGiaoDienKhachHang.cs",
+              "RelativeToolTip": "FLIGHT\\frmGiaoDienKhachHang.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAAAACoAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T05:33:21.427Z",
+              "EditorCaption": ""
             }
           ]
         }

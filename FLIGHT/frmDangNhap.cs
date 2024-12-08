@@ -48,7 +48,7 @@ namespace FLIGHT
         {
             if (_member.CheckPassWord(txtUserId.Text, txtPassWord.Text) == true)
             {
-                tb_Member tv = _member.getAllByUserId(txtUserId.Text);
+                tb_Member tv = _member.getAllByUserID(txtUserId.Text);
                 UserSession.Username = tv.USERID;
                 UserSession.Password = tv.PASSWORD;
                 RegistrationSuccessful?.Invoke(this, EventArgs.Empty);

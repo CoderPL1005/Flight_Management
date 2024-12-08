@@ -52,11 +52,11 @@
             this.btnLuu = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.btnBoQua = new System.Windows.Forms.ToolStripButton();
-            this.dtNhanVien = new System.Windows.Forms.DataGridView();
+            this.dtAircraft = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtNhanVien)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtAircraft)).BeginInit();
             this.SuspendLayout();
             // 
             // txtTimKiem
@@ -66,6 +66,7 @@
             this.txtTimKiem.Size = new System.Drawing.Size(193, 23);
             this.txtTimKiem.TabIndex = 10;
             this.txtTimKiem.Text = "Tìm kiếm";
+            this.txtTimKiem.Click += new System.EventHandler(this.txtTimKiem_Click);
             // 
             // groupControl1
             // 
@@ -80,12 +81,13 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupControl1.Location = new System.Drawing.Point(0, 345);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1099, 188);
+            this.groupControl1.Size = new System.Drawing.Size(1273, 188);
             this.groupControl1.TabIndex = 9;
             this.groupControl1.Text = "Thông tin";
             // 
             // txtID
             // 
+            this.txtID.Enabled = false;
             this.txtID.Location = new System.Drawing.Point(71, 44);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(81, 23);
@@ -166,6 +168,7 @@
             this.btnThoat.Size = new System.Drawing.Size(51, 44);
             this.btnThoat.Text = "Thoát";
             this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // toolStripSeparator5
             // 
@@ -190,7 +193,7 @@
             this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1099, 47);
+            this.toolStrip1.Size = new System.Drawing.Size(1273, 47);
             this.toolStrip1.TabIndex = 8;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -202,6 +205,7 @@
             this.btnThem.Size = new System.Drawing.Size(50, 44);
             this.btnThem.Text = "Thêm";
             this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -216,6 +220,7 @@
             this.btnSua.Size = new System.Drawing.Size(38, 44);
             this.btnSua.Text = "Sửa";
             this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // toolStripSeparator2
             // 
@@ -230,6 +235,7 @@
             this.btnXoa.Size = new System.Drawing.Size(39, 44);
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // toolStripSeparator3
             // 
@@ -245,6 +251,7 @@
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnLuu.Visible = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // toolStripSeparator4
             // 
@@ -260,40 +267,41 @@
             this.btnBoQua.Text = "Bỏ qua";
             this.btnBoQua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnBoQua.Visible = false;
+            this.btnBoQua.Click += new System.EventHandler(this.btnBoQua_Click);
             // 
-            // dtNhanVien
+            // dtAircraft
             // 
-            this.dtNhanVien.AllowUserToResizeColumns = false;
-            this.dtNhanVien.AllowUserToResizeRows = false;
-            this.dtNhanVien.BackgroundColor = System.Drawing.Color.White;
-            this.dtNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtNhanVien.Location = new System.Drawing.Point(0, 47);
-            this.dtNhanVien.MultiSelect = false;
-            this.dtNhanVien.Name = "dtNhanVien";
-            this.dtNhanVien.ReadOnly = true;
-            this.dtNhanVien.RowHeadersWidth = 51;
-            this.dtNhanVien.RowTemplate.Height = 24;
-            this.dtNhanVien.Size = new System.Drawing.Size(1099, 298);
-            this.dtNhanVien.TabIndex = 11;
+            this.dtAircraft.BackgroundColor = System.Drawing.Color.White;
+            this.dtAircraft.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtAircraft.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtAircraft.GridColor = System.Drawing.Color.Black;
+            this.dtAircraft.Location = new System.Drawing.Point(0, 47);
+            this.dtAircraft.MultiSelect = false;
+            this.dtAircraft.Name = "dtAircraft";
+            this.dtAircraft.RowHeadersWidth = 51;
+            this.dtAircraft.RowTemplate.Height = 24;
+            this.dtAircraft.Size = new System.Drawing.Size(1273, 298);
+            this.dtAircraft.TabIndex = 11;
+            this.dtAircraft.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtAircraft_CellClick);
             // 
             // frmAircraft
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1099, 533);
+            this.ClientSize = new System.Drawing.Size(1273, 533);
             this.ControlBox = false;
-            this.Controls.Add(this.dtNhanVien);
+            this.Controls.Add(this.dtAircraft);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmAircraft";
+            this.Load += new System.EventHandler(this.frmAircraft_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtNhanVien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtAircraft)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,6 +331,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton btnLuu;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.DataGridView dtNhanVien;
+        private System.Windows.Forms.DataGridView dtAircraft;
     }
 }

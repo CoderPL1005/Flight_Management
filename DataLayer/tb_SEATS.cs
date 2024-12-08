@@ -17,16 +17,16 @@ namespace DataLayer
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tb_SEATS()
         {
+            this.tb_AIRCRAFTSEATS = new HashSet<tb_AIRCRAFTSEATS>();
             this.tb_BOOKINGS = new HashSet<tb_BOOKINGS>();
             this.tb_CHECKINS = new HashSet<tb_CHECKINS>();
         }
     
         public int SEAT_ID { get; set; }
-        public Nullable<int> AIRCRAFT_ID { get; set; }
-        public string SEAT_NUMBER { get; set; }
         public string CLASS { get; set; }
     
-        public virtual tb_AIRCRAFT tb_AIRCRAFT { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tb_AIRCRAFTSEATS> tb_AIRCRAFTSEATS { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_BOOKINGS> tb_BOOKINGS { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

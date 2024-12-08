@@ -77,10 +77,15 @@ namespace BusinessLayer
             }
             return false;
         }
-        public tb_Member getAllByUserId(string userID)
+        public tb_Member getAllByEmail(string Email)
         {
-            tb_Member tmp = db.tb_Member.FirstOrDefault(x => x.USERID == userID);
+            tb_Member tmp = db.tb_Member.FirstOrDefault(x => x.EMAIL == Email);
             return tmp;
+        }
+
+        public tb_Member getAllByUserID(string id)
+        {
+            return db.tb_Member.FirstOrDefault(x => x.USERID == id);
         }
         public void updateAvatar(string USERID, string IMAGE_PART)
         {
@@ -96,9 +101,9 @@ namespace BusinessLayer
             }
         }
 
-        public void delete(string id)
+        public void delete(string email)
         {
-            tb_Member tv = db.tb_Member.OrderByDescending(x => x.USERID == id).FirstOrDefault();
+            tb_Member tv = db.tb_Member.OrderByDescending(x => x.EMAIL == email).FirstOrDefault();
             db.tb_Member.Remove(tv);
             try
             {
@@ -107,6 +112,27 @@ namespace BusinessLayer
             catch (Exception ex)
             {
                 throw new Exception("Có lỗi xảy ra trong quá trình xử lý dữ liệu" + ex.Message);
+            }
+        }
+
+        public void update(tb_Member member)
+        {
+            tb_Member _member = db.tb_Member.FirstOrDefault(x => x.EMAIL == member.EMAIL);
+            _member.HOTEN = member.HOTEN;
+            _member.DIENTHOAI = member.DIENTHOAI;
+            _member.USERID = member.USERID;
+            _member.GIOITINH = member.GIOITINH;
+            _member.NGAYSINH = member.NGAYSINH;
+            _member.DIACHI = member.DIACHI;
+            _member.PASSWORD = member.PASSWORD;
+            _member.DISABLED = member.DISABLED;
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Có lỗi trong quá trình xử lý" + e.Message);
             }
         }
     }

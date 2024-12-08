@@ -21,9 +21,11 @@ namespace ADMIN
             InitializeComponent();
         }
 
-        public frmMain(string IDChucVu)
+        string IDTAIKHOAN;
+        public frmMain(string IDTAIKHOAN)
         {
             InitializeComponent();
+            this.IDTAIKHOAN = IDTAIKHOAN;
         }
         FUNC func;
         private void frmMain_Load(object sender, EventArgs e)
@@ -40,7 +42,8 @@ namespace ADMIN
                 AccordionControlElement group = new AccordionControlElement
                 {
                     Text = pr.DESCRIPTION,
-                    Style = ElementStyle.Group
+                    Style = ElementStyle.Group,
+                    Image = imageList1.Images[0]
                 };
                 var IsChild = func.getChild(pr.FUNC_CODE);
                 foreach(var ch in IsChild)
@@ -49,11 +52,13 @@ namespace ADMIN
                     {
                         Text = ch.DESCRIPTION,
                         Tag = ch.FUNC_CODE,
-                        Style = ElementStyle.Item
+                        Style = ElementStyle.Item,
+                        Image = imageList1.Images[1]
                     };
                     group.Elements.Add(child);
                 }
                 MainMenu.Elements.Add(group);
+                MainMenu.ExpandAll();
             }
         }
 
@@ -70,24 +75,123 @@ namespace ADMIN
                 {
                     case "BOOKINGS":
                         {
-                            frmBooking frmbk = new frmBooking();
+                            frmBooking frm = new frmBooking();
                             panMain.Controls.Clear();
-                            frmbk.TopLevel = false;
-                            frmbk.Height = panMain.Height;
-                            frmbk.Width = panMain.Width;
-                            panMain.Controls.Add(frmbk);
-                            frmbk.Show();
+                            frm.TopLevel = false;
+                            frm.Height = panMain.Height;
+                            frm.Width = panMain.Width;
+                            panMain.Controls.Add(frm);
+                            frm.Show();
                             break;
                         }
                     case "AIRCRAFT":
                         {
-                            frmAircraft frma = new frmAircraft();
+                            frmAircraft frm = new frmAircraft();
                             panMain.Controls.Clear();
-                            frma.TopLevel = false;
-                            frma.Height = panMain.Height;
-                            frma.Width = panMain.Width;
-                            panMain.Controls.Add(frma);
-                            frma.Show();
+                            frm.TopLevel = false;
+                            frm.Height = panMain.Height;
+                            frm.Width = panMain.Width;
+                            panMain.Controls.Add(frm);
+                            frm.Show();
+                            break;
+                        }
+                    case "AIRPORTS":
+                        {
+                            frmAirports frm = new frmAirports();
+                            panMain.Controls.Clear();
+                            frm.TopLevel = false;
+                            frm.Height = panMain.Height;
+                            frm.Width = panMain.Width;
+                            panMain.Controls.Add(frm);
+                            frm.Show();
+                            break;
+                        }
+                    case "FLIGHT_SCHEDULES":
+                        {
+                            frmFlight_Schedules frm = new frmFlight_Schedules();
+                            panMain.Controls.Clear();
+                            frm.TopLevel = false;
+                            frm.Height = panMain.Height;
+                            frm.Width = panMain.Width;
+                            panMain.Controls.Add(frm);
+                            frm.Show();
+                            break;
+                        }
+                    case "NHANVIEN":
+                        {
+                            frmNhanVien frm = new frmNhanVien();
+                            panMain.Controls.Clear();
+                            frm.TopLevel = false;
+                            frm.Height = panMain.Height;
+                            frm.Width = panMain.Width;
+                            panMain.Controls.Add(frm);
+                            frm.Show();
+                            break;
+                        }
+                    case "Member":
+                        {
+                            frmMember frm = new frmMember();
+                            panMain.Controls.Clear();
+                            frm.TopLevel = false;
+                            frm.Height = panMain.Height;
+                            frm.Width = panMain.Width;
+                            panMain.Controls.Add(frm);
+                            frm.Show();
+                            break;
+                        }
+                    case "FLIGHT":
+                        {
+                            frmFlight frm = new frmFlight();
+                            panMain.Controls.Clear();
+                            frm.TopLevel = false;
+                            frm.Height = panMain.Height;
+                            frm.Width = panMain.Width;
+                            panMain.Controls.Add(frm);
+                            frm.Show();
+                            break;
+                        }
+                    case "DOIMK":
+                        {
+                            frmDoiMatKhauAdmin frm = new frmDoiMatKhauAdmin(IDTAIKHOAN);
+                            panMain.Controls.Clear();
+                            frm.TopLevel = false;
+                            frm.Height = panMain.Height;
+                            frm.Width = panMain.Width;
+                            panMain.Controls.Add(frm);
+                            frm.Show();
+                            break;
+                        }
+                    case "TAIKHOANNHANVIEN":
+                        {
+                            frmTaiKhoanNhanVien frm = new frmTaiKhoanNhanVien();
+                            panMain.Controls.Clear();
+                            frm.TopLevel = false;
+                            frm.Height = panMain.Height;
+                            frm.Width = panMain.Width;
+                            panMain.Controls.Add(frm);
+                            frm.Show();
+                            break;
+                        }
+                    case "SEATS":
+                        {
+                            frmSeats frm = new frmSeats();
+                            panMain.Controls.Clear();
+                            frm.TopLevel = false;
+                            frm.Height = panMain.Height;
+                            frm.Width = panMain.Width;
+                            panMain.Controls.Add(frm);
+                            frm.Show();
+                            break;
+                        }
+                    case "AIRCRAFTSEATS":
+                        {
+                            frmAirCraftSeats frm = new frmAirCraftSeats();
+                            panMain.Controls.Clear();
+                            frm.TopLevel = false;
+                            frm.Height = panMain.Height;
+                            frm.Width = panMain.Width;
+                            panMain.Controls.Add(frm);
+                            frm.Show();
                             break;
                         }
                 }

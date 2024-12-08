@@ -22,6 +22,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tb_AIRCRAFTSEATS">
+      <EntityTypeMapping TypeName="FLIGHT_MANAGEMENTModel.tb_AIRCRAFTSEATS">
+        <MappingFragment StoreEntitySet="tb_AIRCRAFTSEATS">
+          <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+          <ScalarProperty Name="SEAT_NUMBER" ColumnName="SEAT_NUMBER" />
+          <ScalarProperty Name="SEATS_ID" ColumnName="SEATS_ID" />
+          <ScalarProperty Name="AIRCRAFT_ID" ColumnName="AIRCRAFT_ID" />
+          <ScalarProperty Name="AIRCRAFTSEATSID" ColumnName="AIRCRAFTSEATSID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="tb_AIRPORTS">
       <EntityTypeMapping TypeName="FLIGHT_MANAGEMENTModel.tb_AIRPORTS">
         <MappingFragment StoreEntitySet="tb_AIRPORTS">
@@ -64,17 +75,25 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="tb_FLIGHTS">
-      <EntityTypeMapping TypeName="FLIGHT_MANAGEMENTModel.tb_FLIGHTS">
-        <MappingFragment StoreEntitySet="tb_FLIGHTS">
-          <ScalarProperty Name="GATE" ColumnName="GATE" />
+    <EntitySetMapping Name="tb_FLIGHT">
+      <EntityTypeMapping TypeName="FLIGHT_MANAGEMENTModel.tb_FLIGHT">
+        <MappingFragment StoreEntitySet="tb_FLIGHT">
           <ScalarProperty Name="FLIGHT_STATUS" ColumnName="FLIGHT_STATUS" />
-          <ScalarProperty Name="AIRCRAFT_ID" ColumnName="AIRCRAFT_ID" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
           <ScalarProperty Name="ARRIVAL_TIME" ColumnName="ARRIVAL_TIME" />
           <ScalarProperty Name="DEPARTURE_TIME" ColumnName="DEPARTURE_TIME" />
+          <ScalarProperty Name="AIRCRAFT_ID" ColumnName="AIRCRAFT_ID" />
+          <ScalarProperty Name="FLIGHT_ID" ColumnName="FLIGHT_ID" />
+          <ScalarProperty Name="ID_FLIGHT" ColumnName="ID_FLIGHT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_FLIGHT_SCHEDULES">
+      <EntityTypeMapping TypeName="FLIGHT_MANAGEMENTModel.tb_FLIGHT_SCHEDULES">
+        <MappingFragment StoreEntitySet="tb_FLIGHT_SCHEDULES">
+          <ScalarProperty Name="FLIGHT_STATUS" ColumnName="FLIGHT_STATUS" />
           <ScalarProperty Name="DESTINATION_AIRPORT_ID" ColumnName="DESTINATION_AIRPORT_ID" />
           <ScalarProperty Name="ORIGIN_AIRPORT_ID" ColumnName="ORIGIN_AIRPORT_ID" />
-          <ScalarProperty Name="AIRLINE" ColumnName="AIRLINE" />
           <ScalarProperty Name="FLIGHT_ID" ColumnName="FLIGHT_ID" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -95,6 +114,7 @@
     <EntitySetMapping Name="tb_Member">
       <EntityTypeMapping TypeName="FLIGHT_MANAGEMENTModel.tb_Member">
         <MappingFragment StoreEntitySet="tb_Member">
+          <ScalarProperty Name="DISABLED" ColumnName="DISABLED" />
           <ScalarProperty Name="IMAGE_PART" ColumnName="IMAGE_PART" />
           <ScalarProperty Name="DIENTHOAI" ColumnName="DIENTHOAI" />
           <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
@@ -148,12 +168,20 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tb_PhanQuyen">
+      <EntityTypeMapping TypeName="FLIGHT_MANAGEMENTModel.tb_PhanQuyen">
+        <MappingFragment StoreEntitySet="tb_PhanQuyen">
+          <ScalarProperty Name="QUYEN" ColumnName="QUYEN" />
+          <ScalarProperty Name="IDCHUCVU" ColumnName="IDCHUCVU" />
+          <ScalarProperty Name="FUNC_CODE" ColumnName="FUNC_CODE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="tb_SEATS">
       <EntityTypeMapping TypeName="FLIGHT_MANAGEMENTModel.tb_SEATS">
         <MappingFragment StoreEntitySet="tb_SEATS">
           <ScalarProperty Name="CLASS" ColumnName="CLASS" />
-          <ScalarProperty Name="SEAT_NUMBER" ColumnName="SEAT_NUMBER" />
-          <ScalarProperty Name="AIRCRAFT_ID" ColumnName="AIRCRAFT_ID" />
           <ScalarProperty Name="SEAT_ID" ColumnName="SEAT_ID" />
         </MappingFragment>
       </EntityTypeMapping>

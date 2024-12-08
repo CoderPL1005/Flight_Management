@@ -52,11 +52,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AIRCRAFT.cs" />
+    <Compile Include="AIRCRAFTSEATS.cs" />
+    <Compile Include="AIRPORT.cs" />
     <Compile Include="CHUCVU.cs" />
+    <Compile Include="FLIGHT.cs" />
+    <Compile Include="FLIGHT_SCHEDULE.cs" />
     <Compile Include="FUNC.cs" />
     <Compile Include="MEMBER.cs" />
     <Compile Include="NHANVIEN.cs" />
+    <Compile Include="PHANQUYEN.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SEATS.cs" />
     <Compile Include="TAIKHOANNHANVIEN.cs" />
     <Compile Include="UserSession.cs" />
   </ItemGroup>

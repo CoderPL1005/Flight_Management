@@ -14,21 +14,9 @@ namespace DataLayer
     
     public partial class tb_AIRPORTS
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tb_AIRPORTS()
-        {
-            this.tb_FLIGHTS = new HashSet<tb_FLIGHTS>();
-            this.tb_FLIGHTS1 = new HashSet<tb_FLIGHTS>();
-        }
-    
         public int AIRPORT_ID { get; set; }
         public string AIPORT_NAME { get; set; }
         public string CITY { get; set; }
         public string COUNTRY { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_FLIGHTS> tb_FLIGHTS { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_FLIGHTS> tb_FLIGHTS1 { get; set; }
     }
 }

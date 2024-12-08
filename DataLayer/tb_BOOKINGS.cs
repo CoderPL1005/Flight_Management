@@ -32,7 +32,7 @@ namespace DataLayer
         public virtual ICollection<tb_CHECKINS> tb_CHECKINS { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_PAYMENTS> tb_PAYMENTS { get; set; }
-        public virtual tb_FLIGHTS tb_FLIGHTS { get; set; }
+        public virtual tb_FLIGHT_SCHEDULES tb_FLIGHT_SCHEDULES { get; set; }
         public virtual tb_PASSENGERS tb_PASSENGERS { get; set; }
         public virtual tb_SEATS tb_SEATS { get; set; }
     }

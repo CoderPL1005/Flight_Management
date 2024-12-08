@@ -18,6 +18,7 @@ namespace DataLayer
         public tb_CHUCVU()
         {
             this.tb_NHANVIEN = new HashSet<tb_NHANVIEN>();
+            this.tb_PhanQuyen = new HashSet<tb_PhanQuyen>();
         }
     
         public string IDCHUCVU { get; set; }
@@ -25,5 +26,7 @@ namespace DataLayer
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_NHANVIEN> tb_NHANVIEN { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tb_PhanQuyen> tb_PhanQuyen { get; set; }
     }
 }

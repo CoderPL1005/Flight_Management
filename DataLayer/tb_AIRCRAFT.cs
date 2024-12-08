@@ -17,8 +17,8 @@ namespace DataLayer
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tb_AIRCRAFT()
         {
-            this.tb_FLIGHTS = new HashSet<tb_FLIGHTS>();
-            this.tb_SEATS = new HashSet<tb_SEATS>();
+            this.tb_AIRCRAFTSEATS = new HashSet<tb_AIRCRAFTSEATS>();
+            this.tb_FLIGHT = new HashSet<tb_FLIGHT>();
         }
     
         public int AIRCRAFT_ID { get; set; }
@@ -27,8 +27,8 @@ namespace DataLayer
         public string MANUFACTURER { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_FLIGHTS> tb_FLIGHTS { get; set; }
+        public virtual ICollection<tb_AIRCRAFTSEATS> tb_AIRCRAFTSEATS { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_SEATS> tb_SEATS { get; set; }
+        public virtual ICollection<tb_FLIGHT> tb_FLIGHT { get; set; }
     }
 }

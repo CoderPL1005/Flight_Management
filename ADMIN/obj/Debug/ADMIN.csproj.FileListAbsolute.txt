@@ -95,3 +95,14 @@ C:\Flight_management\FlightManagement\ADMIN\bin\Debug\DevExpress.Diagram.v23.2.C
 C:\Flight_management\FlightManagement\ADMIN\obj\Debug\ADMIN.frmMain.resources
 C:\Flight_management\FlightManagement\ADMIN\obj\Debug\ADMIN.frmDangNhapAdmin.resources
 C:\Flight_management\FlightManagement\ADMIN\obj\Debug\ADMIN.frmBooking.resources
+C:\Flight_management\FlightManagement\ADMIN\obj\Debug\ADMIN.frmAircraft.resources
+C:\Flight_management\FlightManagement\ADMIN\obj\Debug\ADMIN.frmAirports.resources
+C:\Flight_management\FlightManagement\ADMIN\obj\Debug\ADMIN.frmNhanVien.resources
+C:\Flight_management\FlightManagement\ADMIN\obj\Debug\ADMIN.frmFlight_Schedules.resources
+C:\Flight_management\FlightManagement\ADMIN\obj\Debug\ADMIN.frmMember.resources
+C:\Flight_management\FlightManagement\ADMIN\obj\Debug\ADMIN.frmFlight.resources
+C:\Flight_management\FlightManagement\ADMIN\obj\Debug\ADMIN.frmDoiMatKhauAdmin.resources
+C:\Flight_management\FlightManagement\ADMIN\obj\Debug\ADMIN.frmTaiKhoanNhanVien.resources
+C:\Flight_management\FlightManagement\ADMIN\obj\Debug\ADMIN.frmSeats.resources
+C:\Flight_management\FlightManagement\ADMIN\obj\Debug\ADMIN.frmAirCraftSeats.resources
+C:\Flight_management\FlightManagement\ADMIN\obj\Debug\ADMIN.Support_Form.frmSupport_AircraftSeats.resources

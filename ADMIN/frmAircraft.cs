@@ -30,7 +30,7 @@ namespace ADMIN
         AIRCRAFT _aircrafts;
         bool _them;
         int _id;
-        private void frmKhachHang_Load(object sender, EventArgs e)
+        private void frmAircraft_Load(object sender, EventArgs e)
         {
             _aircrafts = new AIRCRAFT();
             loadData();
@@ -54,19 +54,25 @@ namespace ADMIN
         }
         void loadData()
         {
-            dtNhanVien.DataSource = _aircrafts.getAll();
-            dtNhanVien.Columns["AIRCRAFTID"].HeaderText = "ID";
-            dtNhanVien.Columns["AIRCRAFTID"].DisplayIndex = 0;
-            dtNhanVien.Columns["AIRCRAFTID"].Width = 100;
-            dtNhanVien.Columns["MODEL"].HeaderText = "Họ tên";
-            dtNhanVien.Columns["MODEL"].DisplayIndex = 2;
-            dtNhanVien.Columns["MODEL"].Width = 300;
-            dtNhanVien.Columns["CAPACITY"].HeaderText = "Điện thoại";
-            dtNhanVien.Columns["CAPACITY"].DisplayIndex = 3;
-            dtNhanVien.Columns["CAPACITY"].Width = 150;
-            dtNhanVien.Columns["MANUFACTURER"].HeaderText = "Email";
-            dtNhanVien.Columns["MANUFACTURER"].DisplayIndex = 4;
-            dtNhanVien.Columns["MANUFACTURER"].Width = 250;
+            dtAircraft.DataSource = _aircrafts.getAll().Select(a => new
+            {
+                a.AIRCRAFT_ID,
+                a.MODEL,
+                a.CAPACITY,
+                a.MANUFACTURER
+            }).ToList();
+            dtAircraft.Columns["AIRCRAFT_ID"].HeaderText = "ID";
+            dtAircraft.Columns["AIRCRAFT_ID"].DisplayIndex = 0;
+            dtAircraft.Columns["AIRCRAFT_ID"].Width = 100;
+            dtAircraft.Columns["MODEL"].HeaderText = "MODEL";
+            dtAircraft.Columns["MODEL"].DisplayIndex = 1;
+            dtAircraft.Columns["MODEL"].Width = 300;
+            dtAircraft.Columns["CAPACITY"].HeaderText = "CAPACITY";
+            dtAircraft.Columns["CAPACITY"].DisplayIndex = 2;
+            dtAircraft.Columns["CAPACITY"].Width = 150;
+            dtAircraft.Columns["MANUFACTURER"].HeaderText = "MANUFACTURER";
+            dtAircraft.Columns["MANUFACTURER"].DisplayIndex = 3;
+            dtAircraft.Columns["MANUFACTURER"].Width = 250;
         }
         void showHideControl(bool t)
         {
@@ -81,7 +87,6 @@ namespace ADMIN
         {
             txtModel.Enabled = t;
             txtManufacturer.Enabled = t;
-            txtID.Enabled = t;
             txtCapacity.Enabled = t;
         }
         void _reset()
@@ -118,23 +123,33 @@ namespace ADMIN
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (_them)
+            if(string.IsNullOrEmpty(txtModel.Text.Trim()) || string.IsNullOrEmpty(txtCapacity.Text.Trim()) || string.IsNullOrEmpty(txtManufacturer.Text.Trim()))
             {
-                tb_AIRCRAFT aircrafts = new tb_AIRCRAFT();     
-                _aircrafts.add(aircrafts);
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin");
             }
             else
             {
-                tb_AIRCRAFT airccrafts = _aircrafts.getAllById(_id);
-                airccrafts.MODEL = txtModel.Text;
-                airccrafts.CAPACITY = int.Parse(txtCapacity.Text);
-                airccrafts.MANUFACTURER = txtManufacturer.Text;
-                _aircrafts.update(airccrafts);
-            }
-            _them = false;
-            _enabled(false);
-            loadData();
-            showHideControl(true);
+                if (_them)
+                {
+                    tb_AIRCRAFT aircrafts = new tb_AIRCRAFT();
+                    aircrafts.MODEL = txtModel.Text;
+                    aircrafts.CAPACITY = int.Parse(txtCapacity.Text);
+                    aircrafts.MANUFACTURER = txtManufacturer.Text;
+                    _aircrafts.add(aircrafts);
+                }
+                else
+                {
+                    tb_AIRCRAFT airccrafts = _aircrafts.getAllById(_id);
+                    airccrafts.MODEL = txtModel.Text;
+                    airccrafts.CAPACITY = int.Parse(txtCapacity.Text);
+                    airccrafts.MANUFACTURER = txtManufacturer.Text;
+                    _aircrafts.update(airccrafts);
+                }
+                _them = false;
+                _enabled(false);
+                loadData();
+                showHideControl(true);
+            }  
         }
 
         private void btnBoQua_Click(object sender, EventArgs e)
@@ -149,35 +164,31 @@ namespace ADMIN
             this.Close();
         }
 
-        private void dtNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dtAircraft_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0 || e.ColumnIndex < 0)
                 return;
 
             // Chọn toàn bộ hàng
-            dtNhanVien.Rows[e.RowIndex].Selected = true;
+            dtAircraft.Rows[e.RowIndex].Selected = true;
             int rowIndex = e.RowIndex; // Lấy chỉ số hàng của ô được click
 
             if (rowIndex >= 0)
             {
 
                 // Lấy dữ liệu từ hàng được click
-                DataGridViewRow selectedRow = dtNhanVien.Rows[rowIndex];
+                DataGridViewRow selectedRow = dtAircraft.Rows[rowIndex];
 
-                string IDNV = selectedRow.Cells["AIRCRAFTID"].Value.ToString();
-                string HOTEN = selectedRow.Cells["MODEL"].Value.ToString();
-                string DIENTHOAI = selectedRow.Cells["CAPACITY"].Value.ToString();
-                string EMAIL = selectedRow.Cells["MANUFACTURER"].Value.ToString();
+                string ID = selectedRow.Cells["AIRCRAFT_ID"].Value.ToString();
+                string MODEL = selectedRow.Cells["MODEL"].Value.ToString();
+                string CAPACITY = selectedRow.Cells["CAPACITY"].Value.ToString();
+                string MANUFACTURER = selectedRow.Cells["MANUFACTURER"].Value.ToString();
 
-                _id = int.Parse(IDNV);
-                txtID.Text = IDNV;
-                txtModel.Text = HOTEN;
-                txtManufacturer.Text = DIENTHOAI;
-                txtEmail.Text = EMAIL;
-                txtDiaChi.Text = DIACHI;
-                cboGioiTinh.Text = GIOITINH;
-                dateNgaySinh.Text = NGAYSINH;
-                txtCapacity.Text = PASSWORD;
+                _id = int.Parse(ID);
+                txtID.Text = ID;
+                txtModel.Text = MODEL;
+                txtManufacturer.Text = MANUFACTURER;
+                txtCapacity.Text = CAPACITY;
             }
         }
 

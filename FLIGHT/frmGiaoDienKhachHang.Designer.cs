@@ -30,30 +30,22 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGiaoDienKhachHang));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.butMain = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.butDangNhap = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.butDangKy = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.butDatVe = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.butDangXuat = new System.Windows.Forms.Button();
             this.butVeDat = new System.Windows.Forms.Button();
             this.butThongTin = new System.Windows.Forms.Button();
             this.butAnh = new System.Windows.Forms.Button();
             this.panMain = new System.Windows.Forms.Panel();
-            this.panDatVe = new System.Windows.Forms.Panel();
-            this.panSoKhach = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cboLoaiChuyenBay = new System.Windows.Forms.ComboBox();
-            this.cboSoKhach = new System.Windows.Forms.ComboBox();
+            this.toolMain = new System.Windows.Forms.ToolStripButton();
+            this.butMain = new System.Windows.Forms.ToolStripButton();
+            this.butDangNhap = new System.Windows.Forms.ToolStripButton();
+            this.butDangKy = new System.Windows.Forms.ToolStripButton();
+            this.butDatVe = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panMain.SuspendLayout();
-            this.panDatVe.SuspendLayout();
-            this.panSoKhach.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -61,7 +53,7 @@
             this.toolStrip1.AutoSize = false;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
+            this.toolMain,
             this.butMain,
             this.toolStripSeparator2,
             this.butDangNhap,
@@ -75,44 +67,11 @@
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.Image = global::FLIGHT.Properties.Resources._8546973_pinterest_p_icon;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(76, 47);
-            this.toolStripButton1.Text = "Airline";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // butMain
-            // 
-            this.butMain.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.butMain.AutoSize = false;
-            this.butMain.Image = ((System.Drawing.Image)(resources.GetObject("butMain.Image")));
-            this.butMain.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.butMain.Name = "butMain";
-            this.butMain.Size = new System.Drawing.Size(50, 50);
-            this.butMain.Visible = false;
-            this.butMain.Click += new System.EventHandler(this.butMain_Click);
-            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 50);
-            // 
-            // butDangNhap
-            // 
-            this.butDangNhap.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.butDangNhap.AutoSize = false;
-            this.butDangNhap.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.butDangNhap.Image = ((System.Drawing.Image)(resources.GetObject("butDangNhap.Image")));
-            this.butDangNhap.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.butDangNhap.Margin = new System.Windows.Forms.Padding(0);
-            this.butDangNhap.Name = "butDangNhap";
-            this.butDangNhap.Size = new System.Drawing.Size(100, 50);
-            this.butDangNhap.Text = "Đăng nhập";
-            this.butDangNhap.Click += new System.EventHandler(this.butDangNhap_Click);
             // 
             // toolStripSeparator1
             // 
@@ -120,35 +79,11 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 50);
             // 
-            // butDangKy
-            // 
-            this.butDangKy.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.butDangKy.AutoSize = false;
-            this.butDangKy.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.butDangKy.Image = ((System.Drawing.Image)(resources.GetObject("butDangKy.Image")));
-            this.butDangKy.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.butDangKy.Name = "butDangKy";
-            this.butDangKy.Size = new System.Drawing.Size(100, 50);
-            this.butDangKy.Text = "Đăng ký";
-            this.butDangKy.Click += new System.EventHandler(this.butDangKy_Click);
-            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 50);
-            // 
-            // butDatVe
-            // 
-            this.butDatVe.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.butDatVe.AutoSize = false;
-            this.butDatVe.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.butDatVe.Image = ((System.Drawing.Image)(resources.GetObject("butDatVe.Image")));
-            this.butDatVe.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.butDatVe.Name = "butDatVe";
-            this.butDatVe.Size = new System.Drawing.Size(100, 50);
-            this.butDatVe.Text = "Đặt vé";
-            this.butDatVe.Click += new System.EventHandler(this.butDatVe_Click);
             // 
             // panel1
             // 
@@ -215,63 +150,68 @@
             // 
             this.panMain.AutoScroll = true;
             this.panMain.BackColor = System.Drawing.Color.White;
-            this.panMain.Controls.Add(this.panDatVe);
             this.panMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panMain.Location = new System.Drawing.Point(0, 50);
             this.panMain.Name = "panMain";
             this.panMain.Size = new System.Drawing.Size(1940, 741);
             this.panMain.TabIndex = 3;
             // 
-            // panDatVe
+            // toolMain
             // 
-            this.panDatVe.Controls.Add(this.cboSoKhach);
-            this.panDatVe.Controls.Add(this.panSoKhach);
-            this.panDatVe.Controls.Add(this.cboLoaiChuyenBay);
-            this.panDatVe.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panDatVe.Location = new System.Drawing.Point(0, 0);
-            this.panDatVe.Name = "panDatVe";
-            this.panDatVe.Size = new System.Drawing.Size(1940, 381);
-            this.panDatVe.TabIndex = 0;
+            this.toolMain.Image = global::FLIGHT.Properties.Resources._8546973_pinterest_p_icon;
+            this.toolMain.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolMain.Name = "toolMain";
+            this.toolMain.Size = new System.Drawing.Size(76, 47);
+            this.toolMain.Text = "Airline";
+            this.toolMain.Click += new System.EventHandler(this.toolMain_Click);
             // 
-            // panSoKhach
+            // butMain
             // 
-            this.panSoKhach.Controls.Add(this.label1);
-            this.panSoKhach.Location = new System.Drawing.Point(204, 78);
-            this.panSoKhach.Name = "panSoKhach";
-            this.panSoKhach.Size = new System.Drawing.Size(294, 264);
-            this.panSoKhach.TabIndex = 2;
-            this.panSoKhach.Visible = false;
+            this.butMain.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.butMain.AutoSize = false;
+            this.butMain.Image = ((System.Drawing.Image)(resources.GetObject("butMain.Image")));
+            this.butMain.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.butMain.Name = "butMain";
+            this.butMain.Size = new System.Drawing.Size(50, 50);
+            this.butMain.Visible = false;
+            this.butMain.Click += new System.EventHandler(this.butMain_Click);
             // 
-            // label1
+            // butDangNhap
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(89, 87);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.butDangNhap.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.butDangNhap.AutoSize = false;
+            this.butDangNhap.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.butDangNhap.Image = ((System.Drawing.Image)(resources.GetObject("butDangNhap.Image")));
+            this.butDangNhap.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.butDangNhap.Margin = new System.Windows.Forms.Padding(0);
+            this.butDangNhap.Name = "butDangNhap";
+            this.butDangNhap.Size = new System.Drawing.Size(100, 50);
+            this.butDangNhap.Text = "Đăng nhập";
+            this.butDangNhap.Click += new System.EventHandler(this.butDangNhap_Click);
             // 
-            // cboLoaiChuyenBay
+            // butDangKy
             // 
-            this.cboLoaiChuyenBay.FormattingEnabled = true;
-            this.cboLoaiChuyenBay.Items.AddRange(new object[] {
-            "Một chiều",
-            "Khứ hồi"});
-            this.cboLoaiChuyenBay.Location = new System.Drawing.Point(109, 48);
-            this.cboLoaiChuyenBay.Name = "cboLoaiChuyenBay";
-            this.cboLoaiChuyenBay.Size = new System.Drawing.Size(121, 24);
-            this.cboLoaiChuyenBay.TabIndex = 0;
+            this.butDangKy.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.butDangKy.AutoSize = false;
+            this.butDangKy.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.butDangKy.Image = ((System.Drawing.Image)(resources.GetObject("butDangKy.Image")));
+            this.butDangKy.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.butDangKy.Name = "butDangKy";
+            this.butDangKy.Size = new System.Drawing.Size(100, 50);
+            this.butDangKy.Text = "Đăng ký";
+            this.butDangKy.Click += new System.EventHandler(this.butDangKy_Click);
             // 
-            // cboSoKhach
+            // butDatVe
             // 
-            this.cboSoKhach.FormattingEnabled = true;
-            this.cboSoKhach.Items.AddRange(new object[] {
-            "Một chiều",
-            "Khứ hồi"});
-            this.cboSoKhach.Location = new System.Drawing.Point(305, 48);
-            this.cboSoKhach.Name = "cboSoKhach";
-            this.cboSoKhach.Size = new System.Drawing.Size(121, 24);
-            this.cboSoKhach.TabIndex = 3;
+            this.butDatVe.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.butDatVe.AutoSize = false;
+            this.butDatVe.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.butDatVe.Image = ((System.Drawing.Image)(resources.GetObject("butDatVe.Image")));
+            this.butDatVe.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.butDatVe.Name = "butDatVe";
+            this.butDatVe.Size = new System.Drawing.Size(100, 50);
+            this.butDatVe.Text = "Đặt vé";
+            this.butDatVe.Click += new System.EventHandler(this.butDatVe_Click);
             // 
             // frmGiaoDienKhachHang
             // 
@@ -291,10 +231,6 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panMain.ResumeLayout(false);
-            this.panDatVe.ResumeLayout(false);
-            this.panSoKhach.ResumeLayout(false);
-            this.panSoKhach.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -302,7 +238,7 @@
         #endregion
 
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton toolMain;
         private System.Windows.Forms.ToolStripButton butMain;
         private System.Windows.Forms.ToolStripButton butDangNhap;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
@@ -311,15 +247,10 @@
         private System.Windows.Forms.Button butVeDat;
         private System.Windows.Forms.Button butThongTin;
         private System.Windows.Forms.Button butAnh;
-        private System.Windows.Forms.Panel panMain;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.Button butDangXuat;
-        private System.Windows.Forms.Panel panDatVe;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton butDatVe;
-        private System.Windows.Forms.ComboBox cboLoaiChuyenBay;
-        private System.Windows.Forms.Panel panSoKhach;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cboSoKhach;
+        private System.Windows.Forms.Panel panMain;
     }
 }

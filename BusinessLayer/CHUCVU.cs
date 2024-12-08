@@ -20,5 +20,15 @@ namespace BusinessLayer
         {
             return db.tb_CHUCVU.ToList();
         }
+
+        public string getIdChuVu(string ChucVu)
+        {
+            return db.tb_CHUCVU.FirstOrDefault(x => x.CHUCVU == ChucVu).IDCHUCVU.ToString();
+        }
+
+        public string getChuVu(string IDChucVu)
+        {
+            return db.tb_CHUCVU.FirstOrDefault(x => x.IDCHUCVU == IDChucVu).CHUCVU.ToString();
+        }
     }
 }

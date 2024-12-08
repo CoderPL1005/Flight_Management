@@ -78,6 +78,9 @@
     <Compile Include="tb_AIRCRAFT.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="tb_AIRCRAFTSEATS.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="tb_AIRPORTS.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -90,7 +93,10 @@
     <Compile Include="tb_CHUCVU.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="tb_FLIGHTS.cs">
+    <Compile Include="tb_FLIGHT.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_FLIGHT_SCHEDULES.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="tb_FUNC.cs">
@@ -106,6 +112,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="tb_PAYMENTS.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_PhanQuyen.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="tb_SEATS.cs">

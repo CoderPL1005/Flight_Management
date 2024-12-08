@@ -14,6 +14,12 @@ namespace DataLayer
     
     public partial class tb_FUNC
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tb_FUNC()
+        {
+            this.tb_PhanQuyen = new HashSet<tb_PhanQuyen>();
+        }
+    
         public string FUNC_CODE { get; set; }
         public Nullable<int> SORT { get; set; }
         public string DESCRIPTION { get; set; }
@@ -21,5 +27,8 @@ namespace DataLayer
         public string PARENT { get; set; }
         public Nullable<bool> MENU { get; set; }
         public string TIPS { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tb_PhanQuyen> tb_PhanQuyen { get; set; }
     }
 }

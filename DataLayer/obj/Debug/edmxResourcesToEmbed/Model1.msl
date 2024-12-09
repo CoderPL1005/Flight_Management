@@ -25,6 +25,7 @@
     <EntitySetMapping Name="tb_AIRCRAFTSEATS">
       <EntityTypeMapping TypeName="FLIGHT_MANAGEMENTModel.tb_AIRCRAFTSEATS">
         <MappingFragment StoreEntitySet="tb_AIRCRAFTSEATS">
+          <ScalarProperty Name="DISABLED" ColumnName="DISABLED" />
           <ScalarProperty Name="PRICE" ColumnName="PRICE" />
           <ScalarProperty Name="SEAT_NUMBER" ColumnName="SEAT_NUMBER" />
           <ScalarProperty Name="SEATS_ID" ColumnName="SEATS_ID" />
@@ -193,6 +194,16 @@
           <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
           <ScalarProperty Name="IDNV" ColumnName="IDNV" />
           <ScalarProperty Name="IDTAIKHOAN" ColumnName="IDTAIKHOAN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_VEDAT">
+      <EntityTypeMapping TypeName="FLIGHT_MANAGEMENTModel.tb_VEDAT">
+        <MappingFragment StoreEntitySet="tb_VEDAT">
+          <ScalarProperty Name="TRANGTHAI" ColumnName="TRANGTHAI" />
+          <ScalarProperty Name="AIRCRAFTSEATISD" ColumnName="AIRCRAFTSEATISD" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="IDVEDAT" ColumnName="IDVEDAT" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -53,8 +53,13 @@ namespace BusinessLayer
 
         public tb_AIRCRAFTSEATS getAllById(int id)
         {
-            tb_AIRCRAFTSEATS tmp = db.tb_AIRCRAFTSEATS.FirstOrDefault(x => x.AIRCRAFTSEATSID== id);
+            tb_AIRCRAFTSEATS tmp = db.tb_AIRCRAFTSEATS.FirstOrDefault(x => x.SEATS_ID == id);
             return tmp;
+        }
+
+        public tb_AIRCRAFTSEATS getAllBySeat(int id)
+        {
+            return db.tb_AIRCRAFTSEATS.FirstOrDefault(x => x.AIRCRAFTSEATSID == id);
         }
 
         public void update(tb_AIRCRAFTSEATS seat)
@@ -64,6 +69,7 @@ namespace BusinessLayer
             _seat.SEATS_ID = seat.SEATS_ID;
             _seat.SEAT_NUMBER = seat.SEAT_NUMBER;
             _seat.PRICE = seat.PRICE;
+            _seat.DISABLED = seat.DISABLED;
             try
             {
                 db.SaveChanges();
@@ -89,6 +95,11 @@ namespace BusinessLayer
             {
                 return prefix + "1";
             }
+        }
+
+        public List<tb_AIRCRAFTSEATS> CountSeat(int Seat_id, int aircraft_id)
+        {
+            return db.tb_AIRCRAFTSEATS.Where(x => x.SEATS_ID == Seat_id && x.AIRCRAFT_ID == aircraft_id).ToList();
         }
     }
 }

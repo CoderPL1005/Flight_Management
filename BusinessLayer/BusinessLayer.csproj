@@ -55,7 +55,7 @@
     <Compile Include="AIRCRAFTSEATS.cs" />
     <Compile Include="AIRPORT.cs" />
     <Compile Include="CHUCVU.cs" />
-    <Compile Include="FLIGHT.cs" />
+    <Compile Include="FLlight.cs" />
     <Compile Include="FLIGHT_SCHEDULE.cs" />
     <Compile Include="FUNC.cs" />
     <Compile Include="MEMBER.cs" />
@@ -65,6 +65,7 @@
     <Compile Include="SEATS.cs" />
     <Compile Include="TAIKHOANNHANVIEN.cs" />
     <Compile Include="UserSession.cs" />
+    <Compile Include="VEDAT.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

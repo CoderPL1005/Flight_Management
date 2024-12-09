@@ -71,5 +71,10 @@ namespace BusinessLayer
                 throw new Exception("Có lỗi trong quá trình xử lý" + e.Message);
             }
         }
+
+        public List<tb_FLIGHT_SCHEDULES> getAllFlyStartWithID(int idxp, int idd)
+        {
+            return db.tb_FLIGHT_SCHEDULES.Where(x => x.ORIGIN_AIRPORT_ID == idxp && x.DESTINATION_AIRPORT_ID == idd).ToList();
+        }
     }
 }

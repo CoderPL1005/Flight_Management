@@ -135,5 +135,9 @@ namespace BusinessLayer
                 throw new Exception("Có lỗi trong quá trình xử lý" + e.Message);
             }
         }
+        public string getEmailByUserId(string userid)
+        {
+            return db.tb_Member.FirstOrDefault(x => x.USERID == userid).EMAIL;
+        }
     }
 }

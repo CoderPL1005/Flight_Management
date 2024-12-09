@@ -1,5 +1,6 @@
 ﻿using BusinessLayer;
 using DevExpress.XtraEditors;
+using FLIGHTS;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,9 +15,11 @@ namespace FLIGHT.Support_Form
 {
     public partial class frmChonThoiGianBay : DevExpress.XtraEditors.XtraForm
     {
-        public frmChonThoiGianBay()
+        Panel panMain;
+        public frmChonThoiGianBay(Panel panMain)
         {
             InitializeComponent();
+            this.panMain = panMain;
         }
         List<string> city;
         AIRPORT _aiport;
@@ -117,7 +120,7 @@ namespace FLIGHT.Support_Form
             {
                 panChonGhe.Visible = true;
                 panChonGhe.BringToFront();
-                frmSup_GiaoDienKhachHang frm = new frmSup_GiaoDienKhachHang();
+                frmSup_GiaoDienKhachHang frm = new frmSup_GiaoDienKhachHang(labSoKhachLoaiGhe, panChonGhe);
                 frm.TopLevel = false;
                 panChonGhe.Height = frm.Height;
                 panChonGhe.Width = frm.Width;
@@ -132,7 +135,7 @@ namespace FLIGHT.Support_Form
             {
                 panThoiGian.Visible = true;
                 panThoiGian.BringToFront();
-                frmCalendar frm = new frmCalendar();
+                frmCalendar frm = new frmCalendar(cboLoaichuyenBay.Text, txtKhoiHanh, txtTroVe, panThoiGian);
                 frm.TopLevel = false;
                 panThoiGian.Height = frm.Height;
                 panThoiGian.Width = frm.Width;
@@ -145,29 +148,28 @@ namespace FLIGHT.Support_Form
             }
         }
 
-        private void txtKhoiHanh_Click(object sender, EventArgs e)
+        private void cboLoaichuyenBay_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if(cboLoaichuyenBay.Text == cboLoaichuyenBay.Items[0].ToString())
+            {
+                txtTroVe.Visible = true;
+                labTroVe.Cursor = Cursors.Hand;
+            }
+            else
+            {
+                txtTroVe.Visible = false;
+                labTroVe.Cursor = Cursors.Default;
+            }
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void butTimkiem_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTroVe_Click(object sender, EventArgs e)
-        {
-
+            frmChonVe frm = new frmChonVe(cboLoaichuyenBay.Text, labSoKhachLoaiGhe.Text, cboDiemKhoiHanh.Text, cboDiemDen.Text, txtKhoiHanh.Text, txtTroVe.Text);
+            frm.TopLevel = false;
+            frm.Dock = DockStyle.Fill;
+            this.panMain.Controls.Add(frm);
+            this.Close();
+            frm.Show();
         }
     }
 }

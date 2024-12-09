@@ -14,13 +14,22 @@ namespace DataLayer
     
     public partial class tb_AIRCRAFTSEATS
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tb_AIRCRAFTSEATS()
+        {
+            this.tb_VEDAT = new HashSet<tb_VEDAT>();
+        }
+    
         public int AIRCRAFTSEATSID { get; set; }
         public Nullable<int> AIRCRAFT_ID { get; set; }
         public Nullable<int> SEATS_ID { get; set; }
         public string SEAT_NUMBER { get; set; }
         public Nullable<decimal> PRICE { get; set; }
+        public Nullable<bool> DISABLED { get; set; }
     
         public virtual tb_AIRCRAFT tb_AIRCRAFT { get; set; }
         public virtual tb_SEATS tb_SEATS { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tb_VEDAT> tb_VEDAT { get; set; }
     }
 }

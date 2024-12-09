@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
-namespace FLIGHT
+namespace FLIGHTS
 {
     public partial class frmKetNoiDB : DevExpress.XtraEditors.XtraForm
     {

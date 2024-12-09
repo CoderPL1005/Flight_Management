@@ -67,7 +67,8 @@ namespace ADMIN
                 a.AIRCRAFT_ID,
                 a.SEATS_ID,
                 a.SEAT_NUMBER,
-                a.PRICE
+                a.PRICE,
+                a.DISABLED
             }).ToList();
             dtAircraftSeat.Columns["AIRCRAFTSEATSID"].HeaderText = "AIRCRAFTSEATSID";
             dtAircraftSeat.Columns["AIRCRAFTSEATSID"].DisplayIndex = 0;
@@ -84,6 +85,9 @@ namespace ADMIN
             dtAircraftSeat.Columns["PRICE"].HeaderText = "PRICE";
             dtAircraftSeat.Columns["PRICE"].DisplayIndex = 3;
             dtAircraftSeat.Columns["PRICE"].Width = 250;
+            dtAircraftSeat.Columns["DISABLED"].HeaderText = "DISABLED";
+            dtAircraftSeat.Columns["DISABLED"].DisplayIndex = 4;
+            dtAircraftSeat.Columns["DISABLED"].Width = 150;
         }
 
         void loadLoaiGhe()
@@ -248,6 +252,7 @@ namespace ADMIN
                         for(int i =0; i<tmp; i++)
                         {
                             aircraftseat.SEAT_NUMBER = _aircraftseat.GetNewSeatNumber(ClassSeat);
+                            aircraftseat.DISABLED = false;
                             _aircraftseat.add(aircraftseat);
                         }   
                     }

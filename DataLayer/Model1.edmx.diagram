@@ -5,26 +5,28 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="bbe94ccb1c1943ad89bf28de957d09dc" Name="Diagram1">
-        <EntityTypeShape EntityType="FLIGHT_MANAGEMENTModel.sysdiagram" Width="1.5" PointX="0.75" PointY="8.5" />
-        <EntityTypeShape EntityType="FLIGHT_MANAGEMENTModel.tb_AIRCRAFT" Width="1.5" PointX="0.75" PointY="2.375" />
-        <EntityTypeShape EntityType="FLIGHT_MANAGEMENTModel.tb_AIRCRAFTSEATS" Width="1.5" PointX="3" PointY="5.25" />
-        <EntityTypeShape EntityType="FLIGHT_MANAGEMENTModel.tb_AIRPORTS" Width="1.5" PointX="0.75" PointY="11.5" />
-        <EntityTypeShape EntityType="FLIGHT_MANAGEMENTModel.tb_BOOKINGS" Width="1.5" PointX="6" PointY="4.875" />
-        <EntityTypeShape EntityType="FLIGHT_MANAGEMENTModel.tb_CHECKINS" Width="1.5" PointX="8.25" PointY="5.125" />
-        <EntityTypeShape EntityType="FLIGHT_MANAGEMENTModel.tb_CHUCVU" Width="1.5" PointX="10.75" PointY="4.125" />
-        <EntityTypeShape EntityType="FLIGHT_MANAGEMENTModel.tb_FLIGHT" Width="1.5" PointX="6" PointY="1.375" />
-        <EntityTypeShape EntityType="FLIGHT_MANAGEMENTModel.tb_FLIGHT_SCHEDULES" Width="1.5" PointX="3.75" PointY="9" />
-        <EntityTypeShape EntityType="FLIGHT_MANAGEMENTModel.tb_FUNC" Width="1.5" PointX="10.75" PointY="0.75" />
-        <EntityTypeShape EntityType="FLIGHT_MANAGEMENTModel.tb_Member" Width="1.5" PointX="10.75" PointY="10.5" />
-        <EntityTypeShape EntityType="FLIGHT_MANAGEMENTModel.tb_NHANVIEN" Width="1.5" PointX="13" PointY="6.25" />
-        <EntityTypeShape EntityType="FLIGHT_MANAGEMENTModel.tb_PASSENGERS" Width="1.5" PointX="3.75" PointY="1.625" />
-        <EntityTypeShape EntityType="FLIGHT_MANAGEMENTModel.tb_PAYMENTS" Width="1.5" PointX="8.25" PointY="8.5" />
-        <EntityTypeShape EntityType="FLIGHT_MANAGEMENTModel.tb_PhanQuyen" Width="1.5" PointX="13" PointY="3" />
-        <EntityTypeShape EntityType="FLIGHT_MANAGEMENTModel.tb_SEATS" Width="1.5" PointX="0.75" PointY="5.375" />
-        <EntityTypeShape EntityType="FLIGHT_MANAGEMENTModel.tb_TAIKHOANNHANVIEN" Width="1.5" PointX="15.25" PointY="7" />
+        <EntityTypeShape EntityType="FLIGHT_MANAGEMENTModel.sysdiagram" Width="1.5" PointX="10.75" PointY="4.875" />
+        <EntityTypeShape EntityType="FLIGHT_MANAGEMENTModel.tb_AIRCRAFT" Width="1.5" PointX="3.75" PointY="12" />
+        <EntityTypeShape EntityType="FLIGHT_MANAGEMENTModel.tb_AIRCRAFTSEATS" Width="1.5" PointX="6" PointY="4.625" />
+        <EntityTypeShape EntityType="FLIGHT_MANAGEMENTModel.tb_AIRPORTS" Width="1.5" PointX="11.75" PointY="0.875" />
+        <EntityTypeShape EntityType="FLIGHT_MANAGEMENTModel.tb_BOOKINGS" Width="1.5" PointX="3" PointY="4.5" />
+        <EntityTypeShape EntityType="FLIGHT_MANAGEMENTModel.tb_CHECKINS" Width="1.5" PointX="5.25" PointY="0.75" />
+        <EntityTypeShape EntityType="FLIGHT_MANAGEMENTModel.tb_CHUCVU" Width="1.5" PointX="8.75" PointY="10.5" />
+        <EntityTypeShape EntityType="FLIGHT_MANAGEMENTModel.tb_FLIGHT" Width="1.5" PointX="9" PointY="1.375" />
+        <EntityTypeShape EntityType="FLIGHT_MANAGEMENTModel.tb_FLIGHT_SCHEDULES" Width="1.5" PointX="0.75" PointY="1.25" />
+        <EntityTypeShape EntityType="FLIGHT_MANAGEMENTModel.tb_FUNC" Width="1.5" PointX="8.75" PointY="13.125" />
+        <EntityTypeShape EntityType="FLIGHT_MANAGEMENTModel.tb_Member" Width="1.5" PointX="6" PointY="11.5" />
+        <EntityTypeShape EntityType="FLIGHT_MANAGEMENTModel.tb_NHANVIEN" Width="1.5" PointX="11" PointY="12.625" />
+        <EntityTypeShape EntityType="FLIGHT_MANAGEMENTModel.tb_PASSENGERS" Width="1.5" PointX="0.75" PointY="8.25" />
+        <EntityTypeShape EntityType="FLIGHT_MANAGEMENTModel.tb_PAYMENTS" Width="1.5" PointX="5.25" PointY="8.125" />
+        <EntityTypeShape EntityType="FLIGHT_MANAGEMENTModel.tb_PhanQuyen" Width="1.5" PointX="11" PointY="9.375" />
+        <EntityTypeShape EntityType="FLIGHT_MANAGEMENTModel.tb_SEATS" Width="1.5" PointX="0.75" PointY="5" />
+        <EntityTypeShape EntityType="FLIGHT_MANAGEMENTModel.tb_TAIKHOANNHANVIEN" Width="1.5" PointX="13.25" PointY="13.375" />
+        <EntityTypeShape EntityType="FLIGHT_MANAGEMENTModel.tb_VEDAT" Width="1.5" PointX="8.25" PointY="5" />
         <AssociationConnector Association="FLIGHT_MANAGEMENTModel.FK__tb_AIRCRA__AIRCR__6ABAD62E" />
         <AssociationConnector Association="FLIGHT_MANAGEMENTModel.FK__tb_FLIGHT__AIRCR__2EA5EC27" />
         <AssociationConnector Association="FLIGHT_MANAGEMENTModel.FK__tb_AIRCRA__SEATS__6BAEFA67" />
+        <AssociationConnector Association="FLIGHT_MANAGEMENTModel.FK__tb_VEDAT__AIRCRA__7BE56230" />
         <AssociationConnector Association="FLIGHT_MANAGEMENTModel.FK__CHECKINS__BOOKIN__09A971A2" />
         <AssociationConnector Association="FLIGHT_MANAGEMENTModel.FK__PAYMENTS__BOOKIN__0D7A0286" />
         <AssociationConnector Association="FLIGHT_MANAGEMENTModel.FK__tb_BOOKIN__FLIGH__04E4BC85" />
@@ -35,6 +37,7 @@
         <AssociationConnector Association="FLIGHT_MANAGEMENTModel.FK__tb_PhanQu__IDCHU__76619304" />
         <AssociationConnector Association="FLIGHT_MANAGEMENTModel.FK__tb_FLIGHT__FLIGH__2DB1C7EE" />
         <AssociationConnector Association="FLIGHT_MANAGEMENTModel.FK__tb_PhanQu__FUNC___756D6ECB" />
+        <AssociationConnector Association="FLIGHT_MANAGEMENTModel.FK__tb_VEDAT__EMAIL__7AF13DF7" />
         <AssociationConnector Association="FLIGHT_MANAGEMENTModel.FK__tb_TAIKHOA__IDNV__47A6A41B" />
       </Diagram>
     </edmx:Diagrams>

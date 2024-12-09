@@ -34,6 +34,7 @@
             this.labHanhKhach = new System.Windows.Forms.Label();
             this.labDecrease = new System.Windows.Forms.Label();
             this.labIncrease = new System.Windows.Forms.Label();
+            this.txtXacNhan = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,6 +102,18 @@
             this.labIncrease.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labIncrease.Click += new System.EventHandler(this.labIncrease_Click);
             // 
+            // txtXacNhan
+            // 
+            this.txtXacNhan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtXacNhan.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.txtXacNhan.Location = new System.Drawing.Point(185, 179);
+            this.txtXacNhan.Name = "txtXacNhan";
+            this.txtXacNhan.Size = new System.Drawing.Size(112, 46);
+            this.txtXacNhan.TabIndex = 6;
+            this.txtXacNhan.Text = "Xác nhận";
+            this.txtXacNhan.UseVisualStyleBackColor = true;
+            this.txtXacNhan.Click += new System.EventHandler(this.txtXacNhan_Click);
+            // 
             // frmSup_GiaoDienKhachHang
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -109,8 +122,9 @@
             this.Appearance.Options.UseForeColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(298, 186);
+            this.ClientSize = new System.Drawing.Size(307, 237);
             this.ControlBox = false;
+            this.Controls.Add(this.txtXacNhan);
             this.Controls.Add(this.labIncrease);
             this.Controls.Add(this.labDecrease);
             this.Controls.Add(this.labHanhKhach);
@@ -133,5 +147,6 @@
         private System.Windows.Forms.Label labHanhKhach;
         private System.Windows.Forms.Label labDecrease;
         private System.Windows.Forms.Label labIncrease;
+        private System.Windows.Forms.Button txtXacNhan;
     }
 }

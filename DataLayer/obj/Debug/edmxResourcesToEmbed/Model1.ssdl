@@ -28,6 +28,7 @@
     <Property Name="SEATS_ID" Type="int" />
     <Property Name="SEAT_NUMBER" Type="varchar" MaxLength="10" />
     <Property Name="PRICE" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="DISABLED" Type="bit" />
   </EntityType>
   <EntityType Name="tb_AIRPORTS">
     <Key>
@@ -177,6 +178,15 @@
     <Property Name="IDNV" Type="nvarchar" MaxLength="50" />
     <Property Name="USERNAME" Type="nvarchar" MaxLength="50" />
     <Property Name="PASSWORD" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tb_VEDAT">
+    <Key>
+      <PropertyRef Name="IDVEDAT" />
+    </Key>
+    <Property Name="IDVEDAT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EMAIL" Type="nvarchar" MaxLength="200" />
+    <Property Name="AIRCRAFTSEATISD" Type="int" />
+    <Property Name="TRANGTHAI" Type="nvarchar" MaxLength="100" />
   </EntityType>
   <Association Name="FK__CHECKINS__BOOKIN__09A971A2">
     <End Role="tb_BOOKINGS" Type="Self.tb_BOOKINGS" Multiplicity="0..1" />
@@ -346,6 +356,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK__tb_VEDAT__AIRCRA__7BE56230">
+    <End Role="tb_AIRCRAFTSEATS" Type="Self.tb_AIRCRAFTSEATS" Multiplicity="0..1" />
+    <End Role="tb_VEDAT" Type="Self.tb_VEDAT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_AIRCRAFTSEATS">
+        <PropertyRef Name="AIRCRAFTSEATSID" />
+      </Principal>
+      <Dependent Role="tb_VEDAT">
+        <PropertyRef Name="AIRCRAFTSEATISD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_VEDAT__EMAIL__7AF13DF7">
+    <End Role="tb_Member" Type="Self.tb_Member" Multiplicity="0..1" />
+    <End Role="tb_VEDAT" Type="Self.tb_VEDAT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Member">
+        <PropertyRef Name="EMAIL" />
+      </Principal>
+      <Dependent Role="tb_VEDAT">
+        <PropertyRef Name="EMAIL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="FLIGHT_MANAGEMENTModelStoreContainer">
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tb_AIRCRAFT" EntityType="Self.tb_AIRCRAFT" Schema="dbo" store:Type="Tables" />
@@ -364,6 +398,7 @@
     <EntitySet Name="tb_PhanQuyen" EntityType="Self.tb_PhanQuyen" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tb_SEATS" EntityType="Self.tb_SEATS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tb_TAIKHOANNHANVIEN" EntityType="Self.tb_TAIKHOANNHANVIEN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_VEDAT" EntityType="Self.tb_VEDAT" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK__CHECKINS__BOOKIN__09A971A2" Association="Self.FK__CHECKINS__BOOKIN__09A971A2">
       <End Role="tb_BOOKINGS" EntitySet="tb_BOOKINGS" />
       <End Role="tb_CHECKINS" EntitySet="tb_CHECKINS" />
@@ -419,6 +454,14 @@
     <AssociationSet Name="FK__tb_TAIKHOA__IDNV__47A6A41B" Association="Self.FK__tb_TAIKHOA__IDNV__47A6A41B">
       <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
       <End Role="tb_TAIKHOANNHANVIEN" EntitySet="tb_TAIKHOANNHANVIEN" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_VEDAT__AIRCRA__7BE56230" Association="Self.FK__tb_VEDAT__AIRCRA__7BE56230">
+      <End Role="tb_AIRCRAFTSEATS" EntitySet="tb_AIRCRAFTSEATS" />
+      <End Role="tb_VEDAT" EntitySet="tb_VEDAT" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_VEDAT__EMAIL__7AF13DF7" Association="Self.FK__tb_VEDAT__EMAIL__7AF13DF7">
+      <End Role="tb_Member" EntitySet="tb_Member" />
+      <End Role="tb_VEDAT" EntitySet="tb_VEDAT" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

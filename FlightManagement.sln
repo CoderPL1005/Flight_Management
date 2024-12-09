@@ -7,13 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "DataLayer\Data
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{07CBC126-35A1-44B9-8CC3-F3E5C33FF1B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FLIGHT", "FLIGHT\FLIGHT.csproj", "{157E6965-840E-4A5A-B8CB-7D0288FA754E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FLIGHTS", "FLIGHT\FLIGHTS.csproj", "{157E6965-840E-4A5A-B8CB-7D0288FA754E}"
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{BF0E1FBE-9240-4CD2-81CA-2648D40CABCE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADMIN", "ADMIN\ADMIN.csproj", "{DEC9FB8B-5F60-4882-9EC1-296AF9AF72AB}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Amin", "Amin\Amin.vdproj", "{24A8E0C4-3FEA-40A9-8F71-865E28867E50}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Ad", "Ad\Ad.vdproj", "{BB45FA57-59E5-4E48-80DA-6AD0FCFA401A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,8 +39,8 @@ Global
 		{DEC9FB8B-5F60-4882-9EC1-296AF9AF72AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DEC9FB8B-5F60-4882-9EC1-296AF9AF72AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DEC9FB8B-5F60-4882-9EC1-296AF9AF72AB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{24A8E0C4-3FEA-40A9-8F71-865E28867E50}.Debug|Any CPU.ActiveCfg = Debug
-		{24A8E0C4-3FEA-40A9-8F71-865E28867E50}.Release|Any CPU.ActiveCfg = Release
+		{BB45FA57-59E5-4E48-80DA-6AD0FCFA401A}.Debug|Any CPU.ActiveCfg = Debug
+		{BB45FA57-59E5-4E48-80DA-6AD0FCFA401A}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -14,6 +14,12 @@ namespace DataLayer
     
     public partial class tb_Member
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tb_Member()
+        {
+            this.tb_VEDAT = new HashSet<tb_VEDAT>();
+        }
+    
         public string USERID { get; set; }
         public string EMAIL { get; set; }
         public string PASSWORD { get; set; }
@@ -24,5 +30,8 @@ namespace DataLayer
         public string DIENTHOAI { get; set; }
         public string IMAGE_PART { get; set; }
         public Nullable<bool> DISABLED { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tb_VEDAT> tb_VEDAT { get; set; }
     }
 }

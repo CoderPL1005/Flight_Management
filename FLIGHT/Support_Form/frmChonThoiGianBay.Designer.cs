@@ -30,7 +30,7 @@
         {
             this.butTimkiem = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.labTroVe = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -58,6 +58,7 @@
             this.butTimkiem.TabIndex = 44;
             this.butTimkiem.Text = "Tìm kiếm";
             this.butTimkiem.UseVisualStyleBackColor = false;
+            this.butTimkiem.Click += new System.EventHandler(this.butTimkiem_Click);
             // 
             // label7
             // 
@@ -69,17 +70,15 @@
             this.label7.Size = new System.Drawing.Size(63, 21);
             this.label7.TabIndex = 42;
             this.label7.Text = "Trở về";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // label8
+            // labTroVe
             // 
-            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label8.Location = new System.Drawing.Point(1153, 90);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(241, 82);
-            this.label8.TabIndex = 41;
-            this.label8.Click += new System.EventHandler(this.label8_Click);
+            this.labTroVe.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labTroVe.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labTroVe.Location = new System.Drawing.Point(1153, 90);
+            this.labTroVe.Name = "labTroVe";
+            this.labTroVe.Size = new System.Drawing.Size(241, 82);
+            this.labTroVe.TabIndex = 41;
             // 
             // label5
             // 
@@ -91,7 +90,6 @@
             this.label5.Size = new System.Drawing.Size(97, 21);
             this.label5.TabIndex = 39;
             this.label5.Text = "Khởi hành";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
@@ -147,6 +145,7 @@
             this.labSoKhachLoaiGhe.Name = "labSoKhachLoaiGhe";
             this.labSoKhachLoaiGhe.Size = new System.Drawing.Size(250, 24);
             this.labSoKhachLoaiGhe.TabIndex = 31;
+            this.labSoKhachLoaiGhe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labSoKhachLoaiGhe.Click += new System.EventHandler(this.labSoKhachLoaiGhe_Click);
             // 
             // cboLoaichuyenBay
@@ -160,6 +159,7 @@
             this.cboLoaichuyenBay.Name = "cboLoaichuyenBay";
             this.cboLoaichuyenBay.Size = new System.Drawing.Size(121, 24);
             this.cboLoaichuyenBay.TabIndex = 30;
+            this.cboLoaichuyenBay.SelectedIndexChanged += new System.EventHandler(this.cboLoaichuyenBay_SelectedIndexChanged);
             // 
             // cboDiemKhoiHanh
             // 
@@ -199,7 +199,6 @@
             this.txtKhoiHanh.Size = new System.Drawing.Size(191, 28);
             this.txtKhoiHanh.TabIndex = 50;
             this.txtKhoiHanh.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.txtKhoiHanh.Click += new System.EventHandler(this.txtKhoiHanh_Click);
             // 
             // txtTroVe
             // 
@@ -209,7 +208,6 @@
             this.txtTroVe.Size = new System.Drawing.Size(191, 28);
             this.txtTroVe.TabIndex = 51;
             this.txtTroVe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.txtTroVe.Click += new System.EventHandler(this.txtTroVe_Click);
             // 
             // panThoiGian
             // 
@@ -235,7 +233,7 @@
             this.Controls.Add(this.cboDiemKhoiHanh);
             this.Controls.Add(this.butTimkiem);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.labTroVe);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
@@ -255,7 +253,7 @@
 
         private System.Windows.Forms.Button butTimkiem;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label labTroVe;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;

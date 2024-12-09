@@ -1,7 +1,7 @@
 ﻿using BusinessLayer;
 using DataLayer;
 using DevExpress.XtraEditors;
-using FLIGHT;
+using FLIGHTS;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +16,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 using System.Xml.Linq;
 
-namespace THUEPHONG
+namespace FLIGHTS
 {
     public partial class frmDangKy : DevExpress.XtraEditors.XtraForm
     {

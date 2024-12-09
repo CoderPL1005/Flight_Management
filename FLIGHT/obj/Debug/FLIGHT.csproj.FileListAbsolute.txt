@@ -99,3 +99,6 @@ C:\Flight_management\FlightManagement\FLIGHT\obj\Debug\FLIGHT.Support_Form.frmSu
 C:\Flight_management\FlightManagement\FLIGHT\obj\Debug\FLIGHT.frmVeDat.resources
 C:\Flight_management\FlightManagement\FLIGHT\obj\Debug\FLIGHT.Support_Form.frmChonThoiGianBay.resources
 C:\Flight_management\FlightManagement\FLIGHT\obj\Debug\FLIGHT.Support_Form.frmCalendar.resources
+C:\Flight_management\FlightManagement\FLIGHT\obj\Debug\FLIGHT.Support_Form.UserControl1.resources
+C:\Flight_management\FlightManagement\FLIGHT\obj\Debug\FLIGHT.Support_Form.UserControl2.resources
+C:\Flight_management\FlightManagement\FLIGHT\obj\Debug\FLIGHT.frmChonVe.resources

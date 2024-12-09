@@ -12,10 +12,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using THUEPHONG;
+using FLIGHTS;
 using static DevExpress.XtraEditors.Mask.MaskSettings;
 
-namespace FLIGHT
+namespace FLIGHTS
 {
     public partial class frmGiaoDienKhachHang : DevExpress.XtraEditors.XtraForm
     {
@@ -35,7 +35,7 @@ namespace FLIGHT
         private void frmGiaoDienKhachHang_Load(object sender, EventArgs e)
         {
             _member = new MEMBER();
-            frmChonThoiGianBay frm = new frmChonThoiGianBay();
+            frmChonThoiGianBay frm = new frmChonThoiGianBay(panMain);
             frm.TopLevel = false;
             frm.Height = panMain.Height;
             frm.Width = panMain.Width;
@@ -220,7 +220,7 @@ namespace FLIGHT
         private void toolMain_Click(object sender, EventArgs e)
         {
             panMain.Controls.Clear();
-            frmChonThoiGianBay frm = new frmChonThoiGianBay();
+            frmChonThoiGianBay frm = new frmChonThoiGianBay(panMain);
             frm.TopLevel = false;
             frm.Height = panMain.Height;
             frm.Width = panMain.Width;
@@ -231,7 +231,7 @@ namespace FLIGHT
         private void butDatVe_Click(object sender, EventArgs e)
         {
             panMain.Controls.Clear();
-            frmChonThoiGianBay frm = new frmChonThoiGianBay();
+            frmChonThoiGianBay frm = new frmChonThoiGianBay(panMain);
             frm.TopLevel = false;
             frm.Height = panMain.Height;
             frm.Width = panMain.Width;

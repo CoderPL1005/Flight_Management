@@ -1,4 +1,4 @@
-﻿namespace FLIGHT
+﻿namespace FLIGHTS
 {
     partial class frmKetNoiDB
     {

@@ -75,7 +75,7 @@ namespace BusinessLayer
 
         public int getIDAirport(string AirportName)
         {
-            return db.tb_AIRPORTS.FirstOrDefault(x => x.AIPORT_NAME == AirportName).AIRPORT_ID;
+            return db.tb_AIRPORTS.FirstOrDefault(x => x.CITY == AirportName).AIRPORT_ID;
         }
 
         public string getAirportName(int id)

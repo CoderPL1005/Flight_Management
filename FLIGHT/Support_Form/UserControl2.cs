@@ -17,5 +17,9 @@ namespace FLIGHT.Support_Form
         {
             InitializeComponent();
         }
+        public void Days(int numday)
+        {
+            label1.Text = numday + "";
+        }
     }
 }

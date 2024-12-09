@@ -42,5 +42,6 @@ namespace DataLayer
         public virtual DbSet<tb_PhanQuyen> tb_PhanQuyen { get; set; }
         public virtual DbSet<tb_SEATS> tb_SEATS { get; set; }
         public virtual DbSet<tb_TAIKHOANNHANVIEN> tb_TAIKHOANNHANVIEN { get; set; }
+        public virtual DbSet<tb_VEDAT> tb_VEDAT { get; set; }
     }
 }

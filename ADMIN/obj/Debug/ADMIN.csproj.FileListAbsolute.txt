@@ -106,3 +106,4 @@ C:\Flight_management\FlightManagement\ADMIN\obj\Debug\ADMIN.frmTaiKhoanNhanVien.
 C:\Flight_management\FlightManagement\ADMIN\obj\Debug\ADMIN.frmSeats.resources
 C:\Flight_management\FlightManagement\ADMIN\obj\Debug\ADMIN.frmAirCraftSeats.resources
 C:\Flight_management\FlightManagement\ADMIN\obj\Debug\ADMIN.Support_Form.frmSupport_AircraftSeats.resources
+C:\Flight_management\FlightManagement\ADMIN\obj\Debug\ADMIN.frmVedat.resources

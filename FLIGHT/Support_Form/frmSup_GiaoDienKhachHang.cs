@@ -15,9 +15,13 @@ namespace FLIGHT.Support_Form
 {
     public partial class frmSup_GiaoDienKhachHang : DevExpress.XtraEditors.XtraForm
     {
-        public frmSup_GiaoDienKhachHang()
+        Label labSoKhachLoaiGhe;
+        Panel panchonGhe;
+        public frmSup_GiaoDienKhachHang(Label labSoKhachLoaiGhe, Panel panChonGhe)
         {
             InitializeComponent();
+            this.labSoKhachLoaiGhe = labSoKhachLoaiGhe;
+            this.panchonGhe = panChonGhe;
         }
         SEATS _seats;
         List<tb_SEATS> seats;
@@ -75,6 +79,14 @@ namespace FLIGHT.Support_Form
             {
                 labDecrease.Enabled = false;
             }
+        }
+
+        private void txtXacNhan_Click(object sender, EventArgs e)
+        {
+            labSoKhachLoaiGhe.Text = "";
+            labSoKhachLoaiGhe.Text = labHanhKhach.Text + "," + cboLoaiGhe.Text;
+            this.Close();
+            panchonGhe.Size = new System.Drawing.Size(panchonGhe.Width, 0);
         }
     }
 }

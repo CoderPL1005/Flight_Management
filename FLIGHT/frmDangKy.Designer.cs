@@ -1,4 +1,4 @@
-﻿namespace THUEPHONG
+﻿namespace FLIGHTS
 {
     partial class frmDangKy
     {

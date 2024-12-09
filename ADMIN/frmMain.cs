@@ -194,6 +194,17 @@ namespace ADMIN
                             frm.Show();
                             break;
                         }
+                    case "CHECKINS":
+                        {
+                            frmVedat frm = new frmVedat();
+                            panMain.Controls.Clear();
+                            frm.TopLevel = false;
+                            frm.Height = panMain.Height;
+                            frm.Width = panMain.Width;
+                            panMain.Controls.Add(frm);
+                            frm.Show();
+                            break;
+                        }
                 }
             }
         }

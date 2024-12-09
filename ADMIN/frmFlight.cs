@@ -26,7 +26,7 @@ namespace ADMIN
             InitializeComponent();
             this.loaiquyen = loaiquyen;
         }
-        FLIGHT _flight;
+        FLlight _flight;
         FLIGHT_SCHEDULE _flight_schedule;
         AIRCRAFT _aircraft;
         AIRPORT _aiport;
@@ -34,7 +34,7 @@ namespace ADMIN
         int _id;
         private void frmFlight_Load(object sender, EventArgs e)
         {
-            _flight = new FLIGHT();
+            _flight = new FLlight();
             _flight_schedule = new FLIGHT_SCHEDULE();
             _aircraft = new AIRCRAFT();
             _aiport = new AIRPORT();
